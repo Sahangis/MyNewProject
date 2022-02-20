@@ -167,7 +167,7 @@ void generavimas(dat& temp, string answer)
 	else
 	{
 		rikiavimas(temp.pazymiai , quantity);
-		if (quantity % 2 == 1) temp.answer = temp.pazymiai[quantity / 2];
+		if (quantity % 2 == 1) temp.answer = temp.pazymiai[quantity / 2]*1.0*0.4+temp.egzaminas*1.0*0.6;
 		else temp.answer = (temp.pazymiai[quantity / 2] + temp.pazymiai[quantity / 2 - 1]) * 1.0/2*0.4+temp.egzaminas*1.0*0.6;
 	}
 	
