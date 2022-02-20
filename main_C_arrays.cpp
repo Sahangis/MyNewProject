@@ -57,6 +57,14 @@ int main()
 			if(!n) cout << "ivesta netinkama reiksme, prasome ivesti vel" << endl;
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			if (n) 
+			{
+				if (n < 0) 
+				{
+					cout << "ivesta netinkama reiksme, prasome ivesti vel" << endl;
+					n = !n;
+				}
+			}
 		}while(!n);
 		string ans;
 		do {
