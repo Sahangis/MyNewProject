@@ -12,6 +12,7 @@ Suskaičiavus atsakymą, programa išspausdina visus duomenis: vardą, pavardę 
 Užduotį sudaro šie failai:
 1. main_C_arrays.cpp
 2. main_Vectors.cpp
+
 Kurie atlieka tą pačią užduotį, tačiau su skirtingais duomenų saugojimo metodais.
 
 ## **Instrukcijos**
