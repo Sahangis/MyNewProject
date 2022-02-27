@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <random>
 #include <time.h>
@@ -6,6 +7,8 @@
 
 
 using namespace std;
+const char DF[] = "kursiokai.txt";
+ifstream fd(DF);
 
 string vardai[16] = { "Martynas", "Jonas", "Vilijamas", "Kristijonas", "Vincas", "Alberas", "Francas" , "Juozas", "Jurgis", "Antanas", "Henrikas", "Balys", "Augustas", "Justinas", "Ernestas", "Hansas" };
 string pavardes[16] = { "Dauksa", "Radvanas", "Marcinkevicius", "Kafka", "Kamiu", "Kudirka", "Shekspyras", "Donelaitis", "Mickevicius", "Biliunas", "Vaizgantas", "Radauskas", "Krivickas", "Savickis", "Sruoga", "Katiliskis" };
@@ -18,18 +21,18 @@ struct dat {
 
 dat generavimas();
 dat input(int i);
+dat skaitymas(int n);
 void rasymas(vector<dat> temp);
-void rikiavimas(vector<int>& pazymiai);
 
 int main()
 {
 	string answer;
 
 	do {
-		cout << "ar norite ivesti visas reiksmes pats ? (y/n), kitu atveju: programa pati sugeneruos visus duomenis" << endl;
+		cout << "ar norite ivesti visas reiksmes pats ? (y/n/s), n atveju: programa pati sugeneruos visus duomenis, o g atveju programa skaitys duomenis is failo" << endl;
 		cin >> answer;
-		if (answer != "y" and answer != "n") cout << "ivesta netinkama reiksme, prasome ivesti vel " << endl;
-	} while (answer != "y" and answer != "n");
+		if (answer != "y" and answer != "n" and answer != "s") cout << "ivesta netinkama reiksme, prasome ivesti vel " << endl;
+	} while (answer != "y" and answer != "n" and answer !="s");
 	if (answer == "n")
 	{
 		srand(time(NULL));
@@ -66,7 +69,28 @@ int main()
 		for (int i = 0; i < n; i++) a.push_back(input(i + 1));
 		rasymas(a);
 	}
-
+	else if(answer == "s")
+	{
+		string filler;
+		int pazymiai=0;
+		if (fd.fail()) cout << "fail to open file" << endl;
+		vector<dat> a;
+		fd >> filler;
+		fd >> filler;
+		do {
+			fd >> filler;
+			if (filler[0] == 'N') pazymiai++;
+		} while (filler[0] == 'N');
+		while (!fd.eof()) a.push_back(skaitymas(pazymiai));
+		a.pop_back();
+		fd.close();
+		sort(a.begin(), a.end(), [](const dat& a, const dat& b)
+			{
+				return a.vardas < b.vardas;
+			});
+		rasymas(a);
+	}
+	system("PAUSE");
 	return 0;
 }
 
@@ -150,6 +174,29 @@ dat generavimas()
 	sort(pazymiai.begin(), pazymiai.end());
 	if (quantity % 2 == 1) temp.answer[1] = pazymiai[quantity / 2] * 1.0 * 0.4 + temp.egzaminas * 1.0 * 0.6;
 	else temp.answer[1] = (pazymiai[quantity / 2] + pazymiai[quantity / 2 - 1]) * 1.0 / 2 * 0.4 + temp.egzaminas * 1.0 * 0.6;
+	return temp;
+}
+
+dat skaitymas(int n)
+{
+	dat temp;
+	int sk, sum=0;
+	fd >> temp.vardas; 
+	if (fd.eof()) return temp;
+	fd >> temp.pavarde;
+	
+	vector<int> pazymiai=vector<int>(n);
+	for (int i = 0; i < n; i++)
+	{
+		fd >> sk;
+		sum += sk;
+		pazymiai[i]=sk;
+	}
+	fd >> temp.egzaminas;
+	temp.answer[0] = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;
+	sort(pazymiai.begin(), pazymiai.end());
+	if (n % 2) temp.answer[1] = temp.egzaminas * 1.0 * 0.6 + pazymiai[n / 2] * 1.0 * 0.4;
+	else temp.answer[1] = temp.egzaminas * 1.0 * 0.6 + (pazymiai[n / 2] + pazymiai[n / 2 - 1]) * 1.0 / 2 * 0.4;
 	return temp;
 }
 
