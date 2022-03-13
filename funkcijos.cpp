@@ -4,16 +4,6 @@
 #include <random>
 #include <iomanip>
 
-
-using std::cin;
-using std::cout;
-using std::endl;
-using std::setw;
-using std::left;
-using std::setprecision;
-using std::fixed;
-using std::sort;
-
 string vardai[16] = { "Martynas", "Jonas", "Vilijamas", "Kristijonas", "Vincas", "Alberas", "Francas" , "Juozas", "Jurgis", "Antanas", "Henrikas", "Balys", "Augustas", "Justinas", "Ernestas", "Hansas" };
 string pavardes[16] = { "Dauksa", "Radvanas", "Marcinkevicius", "Kafka", "Kamiu", "Kudirka", "Shekspyras", "Donelaitis", "Mickevicius", "Biliunas", "Vaizgantas", "Radauskas", "Krivickas", "Savickis", "Sruoga", "Katiliskis" };
 
