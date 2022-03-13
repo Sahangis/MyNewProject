@@ -4,15 +4,6 @@
 #include <algorithm>
 #include "funkcijos.h"
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::setw;
-using std::left;
-using std::setprecision;
-using std::fixed;
-using std::sort;
-
 int main()
 {
 	
