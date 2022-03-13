@@ -1,4 +1,4 @@
-# **Antroji Užduotis - v0.2**
+# **Trečioji Užduotis - v0.3**
 
 ## **Aprašymas**
 Čia yra programa, kuri skaičiuoja mokinių metinį įvertinimą pagal dvi formules(mediano arba vidurkio), tos formulės atrodo taip:
@@ -10,7 +10,9 @@ Suskaičiavus atsakymą, programa išspausdina visus duomenis: vardą, pavardę 
 
 ## **Failai**
 Užduotį sudaro šis failai:
-1. main_Vectors.cpp
+1. main.cpp
+2. funkcijos.cpp
+3. funkcijos.h
 
 ## **Instrukcijos**
 Programos naudojimo gidas:
@@ -20,5 +22,6 @@ Programos naudojimo gidas:
 3. Suskaičiavus metinius rezultatus programa išspausdina studentų atsakymus duomenų ivedimo tvarka.
 4. Jei pasirinkta generuoti duomenis, visus duomenis sugeneruoja automatiskai: vardą, pavardę, pažymių kiekį, pažymius ir egzamino balą.
 5. Jei ivestos netinkamos reikšmės programa prašo įvesti tą reikšmę iš naujo.
-6. jei pasirinkta skaityti duomenis iš failo, programa nuskaito visus duomenis iš krusiokai.txt failo ir išspausdina atsakymus išrykiuotus pagal mokinių vardą.
+6. jei pasirinkta skaityti duomenis iš failo, programa nuskaito visus duomenis iš krusiokai.txt failo ir išspausdina atsakymus.
+7. visus duomenis programa išrykiuoja pagal mokinių vardą.
 
