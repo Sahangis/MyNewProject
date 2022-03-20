@@ -1,8 +1,5 @@
 #include "funkcijos.h"
-#include <iostream>
-#include <algorithm>
 #include <random>
-#include <iomanip>
 
 string vardai[16] = { "Martynas", "Jonas", "Vilijamas", "Kristijonas", "Vincas", "Alberas", "Francas" , "Juozas", "Jurgis", "Antanas", "Henrikas", "Balys", "Augustas", "Justinas", "Ernestas", "Hansas" };
 string pavardes[16] = { "Dauksa", "Radvanas", "Marcinkevicius", "Kafka", "Kamiu", "Kudirka", "Shekspyras", "Donelaitis", "Mickevicius", "Biliunas", "Vaizgantas", "Radauskas", "Krivickas", "Savickis", "Sruoga", "Katiliskis" };
@@ -53,39 +50,27 @@ dat input(int i)
 
 	int sum = 0;
 	for (int j = 0; j < pazymiai.size(); j++) sum += pazymiai[j];
-	temp.answer[0] = 0.4 * (sum * 1.0 / pazymiai.size()) + 0.6 * (temp.egzaminas * 1.0);
-	sort(pazymiai.begin(), pazymiai.end());
-	if (pazymiai.size() % 2 == 0) temp.answer[1] = (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 - 1]) * 1.0 / 2 * 0.4 + temp.egzaminas * 1.0 * 0.6;
-	else temp.answer[1] = pazymiai[pazymiai.size() / 2] * 1.0 * 0.4 + temp.egzaminas * 1.0 * 0.6;
+	temp.answer = 0.4 * (sum * 1.0 / pazymiai.size()) + 0.6 * (temp.egzaminas * 1.0);
 	pazymiai.clear();
 	return temp;
 }
 
-dat generavimas()
+dat generavimas(int quantity)
 {
 	dat temp;
-	int index = (double)rand() / RAND_MAX * 16;
+	int index = (double)rand() / RAND_MAX * 15.9;
 	temp.vardas = vardai[index];
-	int index2 = (double)rand() / RAND_MAX * 16;
+	int index2 = (double)rand() / RAND_MAX * 15.9;
 	temp.pavarde = pavardes[index2];
-	int quantity;
-	do {
-		quantity = (double)rand() / RAND_MAX * 10;
-	} while (quantity == 0);
 	int sum = 0;
-	vector<int> pazymiai;
 	for (int i = 0; i < quantity; i++)
 	{
-		int value = (double)rand() / RAND_MAX * 10;
-		pazymiai.push_back(value);
+		int value = (double)rand() / RAND_MAX * 10.9;
+		temp.pazymiai.push_back(value);
 		sum += value;
 	}
-	int egz = (double)rand() / RAND_MAX * 10;
+	int egz = (double)rand() / RAND_MAX * 10.9;
 	temp.egzaminas = egz;
-	temp.answer[0] = sum * 1.0 / quantity * 0.4 + temp.egzaminas * 1.0 * 0.6;
-	sort(pazymiai.begin(), pazymiai.end());
-	if (quantity % 2 == 1) temp.answer[1] = pazymiai[quantity / 2] * 1.0 * 0.4 + temp.egzaminas * 1.0 * 0.6;
-	else temp.answer[1] = (pazymiai[quantity / 2] + pazymiai[quantity / 2 - 1]) * 1.0 / 2 * 0.4 + temp.egzaminas * 1.0 * 0.6;
 	return temp;
 }
 
@@ -105,16 +90,54 @@ dat skaitymas(int n, ifstream &fd)
 		pazymiai[i] = sk;
 	}
 	fd >> temp.egzaminas;
-	temp.answer[0] = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;
-	sort(pazymiai.begin(), pazymiai.end());
-	if (n % 2) temp.answer[1] = temp.egzaminas * 1.0 * 0.6 + pazymiai[n / 2] * 1.0 * 0.4;
-	else temp.answer[1] = temp.egzaminas * 1.0 * 0.6 + (pazymiai[n / 2] + pazymiai[n / 2 - 1]) * 1.0 / 2 * 0.4;
+	temp.answer = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;
 	return temp;
+}
+
+void outputas(string& output, dat a, bool kurimas)
+{
+	string atribute = "";
+	for (int i = 0; i < 20 - a.vardas.length(); i++) atribute.insert(0, " ");
+	atribute.insert(0, a.vardas);
+	output += atribute;
+	atribute = "";
+	for (int i = 0; i < 25 - a.pavarde.length(); i++) atribute.insert(0, " ");
+	atribute.insert(0, a.pavarde);
+	output += atribute; 
+	if (kurimas)
+	{
+		for (int i = 0; i < a.pazymiai.size(); i++)
+		{
+			if (a.pazymiai[i] == 10) output += "        "+to_string(a.pazymiai[i]);
+			else output += "         " + to_string(a.pazymiai[i]);
+		}
+		if (a.egzaminas == 10) output += "        " + to_string(a.egzaminas)+"\n";
+		else output += "         " + to_string(a.egzaminas)+"\n";
+	}
+	else 
+	{
+		string answer = to_string(a.answer);
+		output += answer +"\n";
+	}
 }
 
 void rasymas(vector<dat> temp)
 {
 	cout << left << setw(16) << "Vardas" << left << setw(16) << "Pavarde" << left << setw(18) << "Galutinis (Vid.)" << left << setw(16) << "Galutinis(Med.)" << endl;
 	cout << "----------------------------------------------------------------" << endl;
-	for (int i = 0; i < temp.size(); i++) cout << left << setw(16) << temp[i].vardas << left << setw(16) << temp[i].pavarde << left << setw(18) << fixed << setprecision(2) << temp[i].answer[0] << left << setw(16) << fixed << setprecision(2) << temp[i].answer[1] << endl;
+	for (int i = 0; i < temp.size(); i++) cout << left << setw(16) << temp[i].vardas << left << setw(16) << temp[i].pavarde << left << setw(18) << fixed << setprecision(2) << temp[i].answer << endl;
+}
+
+void rasymas_s(vector<dat> temp, const char RF[])
+{
+	ofstream fr(RF);
+	fr << left << setw(20) << "Vardas" << left << setw(20) << "Pavarde" << "Galutinis (Vid.)" << endl;
+	fr << "-------------------------------------------------" << endl;
+	for (int i = 0; i < temp.size(); i++)
+	{
+		string eile="";
+		outputas(eile, temp[i], false);
+		fr << eile;
+	}
+	fr.close();
 }
