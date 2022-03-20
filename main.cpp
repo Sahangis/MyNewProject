@@ -121,6 +121,7 @@ int main()
 		srand(time(NULL));
 		for (int i = 0; i < 5; i++)
 		{
+			auto create_start = std::chrono::high_resolution_clock::now();
 			string output="";
 			ofstream fr(RF[i]);
 			vector<dat> a;
@@ -148,7 +149,10 @@ int main()
 				output = "";
 			}
 			fr.close();
-			cout << "sukurtas: " << RF[i] << endl;
+			auto create_end = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<double> create_diff = create_end - create_start;
+			std::cout << "sukurtas: "<< RF[i] << ", kuris uztruko: " << create_diff.count() << " s\n";
+
 		}	
 	}
 	system("PAUSE");
