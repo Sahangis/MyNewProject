@@ -32,5 +32,6 @@ dat generavimas(int quantity);
 dat input(int i);
 dat skaitymas(int n, ifstream &fd);
 void outputas(string &output, dat a, bool kurimas);
+bool FileExists(string filename);
 void rasymas(vector<dat> temp);
 void rasymas_s(vector<dat> temp, const char RF[]);
