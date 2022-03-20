@@ -57,7 +57,6 @@ int main()
 			} while (ax != "1" and ax != "2" and ax != "3" and ax != "4" and ax != "5");
 			auto start = std::chrono::high_resolution_clock::now();
 			ifstream fd;
-			///fd.exceptions(ifstream::failbit | ifstream::badbit);
 			try
 			{
 				auto read_start = std::chrono::high_resolution_clock::now();
