@@ -6,6 +6,7 @@
 1. **Metinis** = 0.4 * **vidurkis** + 0.6 * **egzaminas** 
 
 Kietekų sarašui pretenduoja studentai, kurių metinis įvertinimas yra didesnis arba lygus 5.
+
 Vargšiukų saraše lieka tie studentai, kurių metinis įvertinimas yra mažesnis nei 5.
 
 ## **Failai**
