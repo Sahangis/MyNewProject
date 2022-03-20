@@ -57,6 +57,7 @@ int main()
 			} while (ax != "1" and ax != "2" and ax != "3" and ax != "4" and ax != "5");
 			auto start = std::chrono::high_resolution_clock::now();
 			ifstream fd;
+			if(!FileExists(DF[std::stoi(ax) - 1])) fd.exceptions(ifstream::failbit | ifstream::badbit);
 			try
 			{
 				auto read_start = std::chrono::high_resolution_clock::now();
@@ -79,7 +80,6 @@ int main()
 				}
 				poor.pop_back();
 				auto sort_end = std::chrono::high_resolution_clock::now();
-				//a.pop_back();
 				auto read_end = std::chrono::high_resolution_clock::now();
 				std::chrono::duration<double> read_diff = read_end - read_start;
 				std::cout << "Failo nuskaitymas tesiai i eiluciu vektoriu uztruko: " << read_diff.count() << " s\n";
