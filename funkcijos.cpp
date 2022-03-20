@@ -121,6 +121,20 @@ void outputas(string& output, dat a, bool kurimas)
 	}
 }
 
+bool FileExists(string filename)
+{
+	ifstream file(filename);
+	if (file.is_open())
+	{
+		return 1;
+		file.close();
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 void rasymas(vector<dat> temp)
 {
 	cout << left << setw(16) << "Vardas" << left << setw(16) << "Pavarde" << left << setw(18) << "Galutinis (Vid.)" << left << setw(16) << "Galutinis(Med.)" << endl;
