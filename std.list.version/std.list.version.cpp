@@ -74,7 +74,10 @@ int main()
 					std::cout << "Failo nuskaitymas tesiai i lista uztruko: " << read_diff.count() << " s\n";
 					fd.close();
 					auto sort_start = std::chrono::high_resolution_clock::now();
-					all.sort(palyginimas);
+					all.sort([](const dat& a, const dat& b)
+						{
+							return a.answer > b.answer;
+						});
 					isskyrimas(poor, cool, all);
 					auto sort_end = std::chrono::high_resolution_clock::now();
 					std::chrono::duration<double> sort_diff = sort_end - sort_start;
