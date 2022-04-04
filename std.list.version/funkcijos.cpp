@@ -20,7 +20,7 @@ dat input(int i)
 	} while (temp.pavarde.length() >= 16);
 	bool inFail;
 	int sk;
-	vector<int> pazymiai;
+	list<int> pazymiai;
 	do {
 		int j = 0;
 		do {
@@ -49,7 +49,11 @@ dat input(int i)
 	} while (inFail);
 
 	int sum = 0;
-	for (int j = 0; j < pazymiai.size(); j++) sum += pazymiai[j];
+	list<int> ::iterator it=pazymiai.begin();
+	for (int j = 0; j < pazymiai.size(); j++) 
+	{
+		sum += *it++;
+	}
 	temp.answer = 0.4 * (sum * 1.0 / pazymiai.size()) + 0.6 * (temp.egzaminas * 1.0);
 	pazymiai.clear();
 	return temp;
@@ -82,12 +86,12 @@ dat skaitymas(int n, ifstream& fd)
 	if (fd.eof()) return temp;
 	fd >> temp.pavarde;
 
-	vector<int> pazymiai = vector<int>(n);
+	//list<int> pazymiai = list<int>(n);
 	for (int i = 0; i < n; i++)
 	{
 		fd >> sk;
 		sum += sk;
-		pazymiai[i] = sk;
+		//pazymiai.push_back(sk);
 	}
 	fd >> temp.egzaminas;
 	temp.answer = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;
