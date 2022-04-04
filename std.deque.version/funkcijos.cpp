@@ -82,12 +82,12 @@ dat skaitymas(int n, ifstream& fd)
 	if (fd.eof()) return temp;
 	fd >> temp.pavarde;
 
-	deque<int> pazymiai = deque<int>(n);
+	//deque<int> pazymiai = deque<int>(n);
 	for (int i = 0; i < n; i++)
 	{
 		fd >> sk;
 		sum += sk;
-		pazymiai[i] = sk;
+		//pazymiai[i] = sk;
 	}
 	fd >> temp.egzaminas;
 	temp.answer = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;
