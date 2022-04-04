@@ -36,90 +36,110 @@ Programos naudojimo gidas:
 
 kursiokai1000.txt
 
-Failo nuskaitymas tesiai i vectoriu uztruko: 0.0015116 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0002658 s
+Failo nuskaitymas tesiai i vectoriu uztruko: 0.0016519 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0002871 s
 
 kursiokai10000.txt
 
-Failo nuskaitymas tesiai i vectoriu uztruko: 0.0151226 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0024983 s
+Failo nuskaitymas tesiai i vectoriu uztruko: 0.0201648 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0023306 s
+
 
 kursiokai100000.txt
 
-Failo nuskaitymas tesiai i vectoriu uztruko: 0.173504 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0241753 s
+Failo nuskaitymas tesiai i vectoriu uztruko: 0.127467 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.0225131 s
+
 
 kursiokai1000000.txt
 
-Failo nuskaitymas tesiai i vectoriu uztrukso: 1.2808 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.242151 s
+Failo nuskaitymas tesiai i vectoriu uztruko: 1.53155 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 0.284957 s
+
 
 kursiokai10000000.txt
 
-Failo nuskaitymas tesiai i vectoriu uztruko: 20.0585 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 2.83584 s
+Failo nuskaitymas tesiai i vectoriu uztruko: 17.737 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: 2.63837 s
+
 
 ----------------------------------------------------------------------------------------------------------------------------
 (Duomenys saugomi Listuose)
 
 kursiokai1000.txt
 
-Failo nuskaitymas tesiai i lista uztruko: 0.0016823 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.0003356 s
+Failo nuskaitymas tesiai i lista uztruko: 0.0018339 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.0003953 s
 
 kursiokai10000.txt
 
-Failo nuskaitymas tesiai i lista uztruko: 0.0239907 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.0045124 s
+Failo nuskaitymas tesiai i lista uztruko: 0.0208536 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.0039927 s
 
 kursiokai100000.txt
 
-Failo nuskaitymas tesiai i lista uztruko: 0.187777 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.06556 s
+Failo nuskaitymas tesiai i lista uztruko: 0.133481 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 0.0658433 s
 
 kursiokai1000000.txt
 
-Failo nuskaitymas tesiai i lista uztruko: 1.64425 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 1.04956 s
+Failo nuskaitymas tesiai i lista uztruko: 1.63848 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 1.09838 s
 
 kursiokai10000000.txt
 
-Failo nuskaitymas tesiai i lista uztruko: 11.7147 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 14.2524 s
+Failo nuskaitymas tesiai i lista uztruko: 18.3833 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku listus uztruko: 14.7948 s
 
 -----------------------------------------------------------------------------------------------------------------------------
 (Duomenys saugomi Dequose)
 
 kursiokai1000.txt
 
-Failo nuskaitymas tesiai i deqa uztruko: 0.0028307 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.0007891 s
+Failo nuskaitymas tesiai i deqa uztruko: 0.0017827 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.0007094 s
 
 kursiokai10000.txt
 
-Failo nuskaitymas tesiai i deqa uztruko: 0.0161605 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.007039 s
+Failo nuskaitymas tesiai i deqa uztruko: 0.0209871 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.0077866 s
+
 
 kursiokai100000.txt
 
-Failo nuskaitymas tesiai i deqa uztruko: 0.154049 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.0945207 s
+Failo nuskaitymas tesiai i deqa uztruko: 0.138935 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 0.0923417 s
 
 kursiokai1000000.txt
 
-Failo nuskaitymas tesiai i deqa uztruko: 2.30649 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 1.24996 s
+Failo nuskaitymas tesiai i deqa uztruko: 1.61191 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 1.27831 s
 
 kursiokai10000000.txt
 
-Failo nuskaitymas tesiai i deqa uztruko: 23.0705 s
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 14.967 s
+Failo nuskaitymas tesiai i deqa uztruko: 18.4775 s
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku dequs uztruko: 15.3049 s
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 Galutinė išvada:
 
-   -Nuskaitymas greičiausiai vyksta į listus.
+   -Nuskaitymas greičiausiai vyksta į vektorius.
  
    -Išskyrimas į vargšiukus ir kietekus greičiausiai vyksta su vektoriais.
  
