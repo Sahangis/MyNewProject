@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <list>
 #include <string>
 #include <fstream>
@@ -11,7 +10,6 @@
 using std::ifstream;
 using std::ofstream;
 using std::string;
-using std::vector;
 using std::to_string;
 using std::cin;
 using std::list;
