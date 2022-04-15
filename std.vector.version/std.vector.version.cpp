@@ -7,7 +7,7 @@ int main()
 
 	string answer, ats;
 	do {
-		cout << "ar norite kruti rezultatu faila ? {0} ar norite generuoti 5 duomenu failus ? {1} (Duomenys saugomi Vektoriuose)" << endl;
+		cout << "ar norite kruti rezultatu faila ? {0} ar norite generuoti 5 duomenu failus ? {1} (Duomenys saugomi Listuose)" << endl;
 		cin >> ats;
 		if (ats != "1" and ats != "0") cout << "ivesta reiksme netinkama, prasome ivesti vel" << endl;
 	} while (ats != "1" and ats != "0");
@@ -36,30 +36,31 @@ int main()
 					}
 				}
 			} while (!n);
-			vector<dat> a;
+			list<dat> a;
 			for (int i = 0; i < n; i++) a.push_back(input(i + 1));
-			sort(a.begin(), a.end(), [](const dat& c, const dat& b)
-				{
-					return c.vardas > b.vardas;
-				});
+			a.sort(palyginimas2);
 			rasymas(a);
 		}
 		else if (answer == "s")
 		{
-			string ax;
-			vector<dat> all;
-			vector<dat> poor;
-			vector<dat> cool;
+			string ax, strategy;
+			list<dat> all;
+			list<dat> poor;
+			list<dat> cool;
 			const string DF[5] = { "kursiokai1000.txt", "kursiokai10000.txt", "kursiokai100000.txt", "kursiokai1000000.txt", "kursiokai10000000.txt" };
 			const string RF[5] = { "kietekai1000.txt", "kietekai10000.txt", "kietekai100000.txt", "kietekai1000000.txt", "kietekai10000000.txt" };
 			const string Rf[5] = { "vargsiukai1000.txt", "vargsiukai10000.txt", "vargsiukai100000.txt", "vargsiukai1000000.txt", "vargsiukai10000000.txt" };
+			do {
+				cout << "Pasirinkite, kokia skaidymo strategija naudoti 1 ar 2 ?" << endl;
+				cin >> strategy;
+				if (strategy != "1" and strategy != "2") cout << "ivesta netinkama strategija, prasome ivesti vel" << endl;
+			} while (strategy != "1" and strategy != "2");
 			for (int i = 0; i < 5; i++)
 			{
 				ifstream fd;
 				if (!FileExists(DF[i])) fd.exceptions(ifstream::failbit | ifstream::badbit);
 				try
 				{
-					auto read_start = std::chrono::high_resolution_clock::now();
 					cout << DF[i] << endl;
 					fd.open(DF[i]);
 					string filler;
@@ -72,30 +73,43 @@ int main()
 					} while (filler[0] == 'N');
 					while (!fd.eof()) all.push_back(skaitymas(pazymiai, fd));
 					all.pop_back();
-					auto read_end = std::chrono::high_resolution_clock::now();
-					std::chrono::duration<double> read_diff = read_end - read_start;
-					std::cout << "Failo nuskaitymas tesiai i vectoriu uztruko: " << read_diff.count() << " s\n";
 					fd.close();
 					auto sort_start = std::chrono::high_resolution_clock::now();
-					sort(all.begin(), all.end(), [](const dat& a, const dat& b)
+					all.sort([](const dat& a, const dat& b)
 						{
 							return a.answer > b.answer;
 						});
 					isskyrimas(poor, cool, all);
-					auto sort_end = std::chrono::high_resolution_clock::now();
-					std::chrono::duration<double> sort_diff = sort_end - sort_start;
-					std::cout << "Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius uztruko: " << sort_diff.count() << " s\n";
+					if (strategy == "1")
+					{
+						isskyrimas(poor, cool, all);
+						auto sort_end = std::chrono::high_resolution_clock::now();
+						std::chrono::duration<double> sort_diff = sort_end - sort_start;
+						std::cout << "Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: " << sort_diff.count() << " s\n";
+					}
+					else
+					{
+						isskyrimas2(poor, all);
+						auto sort_end = std::chrono::high_resolution_clock::now();
+						std::chrono::duration<double> sort_diff = sort_end - sort_start;
+						std::cout << "Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: " << sort_diff.count() << " s\n";
+					}
 				}
 				catch (ifstream::failure e) {
 					cout << e.what() << endl;
 					exit(-1);
 				}
-				rasymas_s(poor, Rf[i]);
-				rasymas_s(cool, RF[i]);
-				system("PAUSE");
+				/*rasymas_s(poor, Rf[i]);
+				if (strategy == "1")
+				{
+					rasymas_s(cool, RF[i]);
+					cool.clear();
+				}
+				else rasymas_s(all, RF[i]);
+				system("PAUSE");*/
+				cool.clear();
 				all.clear();
 				poor.clear();
-				cool.clear();
 			}
 
 		}
@@ -137,7 +151,7 @@ int main()
 			auto create_end = std::chrono::high_resolution_clock::now();
 			std::chrono::duration<double> create_diff = create_end - create_start;
 			std::cout << "sukurtas: " << RF[i] << ", kuris uztruko: " << create_diff.count() << " s\n";
-		}
+		}	
 	}
 	system("PAUSE");
 	return 0;
