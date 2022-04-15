@@ -144,6 +144,20 @@ void isskyrimas(deque<dat>& poor, deque<dat>& cool, deque<dat> all)
 	}
 }
 
+void isskyrimas2(deque<dat>& poor, deque<dat>& all)
+{
+	for (int i = 0; i < all.size(); i++)
+	{
+		if (all[i].answer < 5)
+		{
+			poor.insert(poor.begin(), all.begin() + i, all.end());
+			all.erase(all.begin() + i, all.end());
+			break;
+		}
+	}
+}
+
+
 void rasymas(deque<dat> temp)
 {
 	cout << left << setw(16) << "Vardas" << left << setw(16) << "Pavarde" << left << setw(18) << "Galutinis (Vid.)" << left << setw(16) << "Galutinis(Med.)" << endl;
