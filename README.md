@@ -19,6 +19,7 @@ Užduotį sudaro šie failai:
 1. main.cpp
 2. funkcijos.cpp
 3. funkcijos.h
+4. Makefile
 
 ## **Apie ankstesnius releasus:**
 
