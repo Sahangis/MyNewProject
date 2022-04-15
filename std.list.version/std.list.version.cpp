@@ -99,15 +99,14 @@ int main()
 					cout << e.what() << endl;
 					exit(-1);
 				}
-				/*rasymas_s(poor, Rf[i]);
+				rasymas_s(poor, Rf[i]);
 				if (strategy == "1")
 				{
 					rasymas_s(cool, RF[i]);
 					cool.clear();
 				}
 				else rasymas_s(all, RF[i]);
-				system("PAUSE");*/
-				cool.clear();
+				system("PAUSE");
 				all.clear();
 				poor.clear();
 			}
