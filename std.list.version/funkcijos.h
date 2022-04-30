@@ -6,6 +6,7 @@
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
+#include <cmath>
 
 using std::ifstream;
 using std::ofstream;
@@ -38,3 +39,4 @@ bool palyginimas2(const dat& a, const dat& b);
 void rasymas(list<dat> temp);
 void rasymas_s(list<dat> temp, const string RF);
 void isskyrimas(list<dat>& poor, list<dat>& cool, list<dat> all);
+void isskyrimas2(list<dat>& poor, list<dat>& all);

@@ -137,11 +137,22 @@ bool FileExists(string filename)
 
 void isskyrimas(vector<dat>& poor, vector<dat>& cool, vector<dat> all)
 {
-	for (int i=0; i<all.size(); i++)
+	/*for (int i = 0; i<all.size(); i++)
 	{
 		if (all[i].answer >= 5) cool.push_back(all[i]);
 		else poor.push_back(all[i]);
-	}
+	}*/
+	auto answer = std::find_if(all.begin(), all.end(), [](dat a) { return a.answer < 5; });
+	poor.insert(poor.begin(), answer, all.end());
+	all.erase(answer, all.end());
+	cool.insert(cool.begin(), all.begin(), all.end());
+}
+
+void isskyrimas2(vector<dat>& poor, vector<dat> &all)
+{
+	auto answer = std::find_if(all.begin(), all.end(), [](dat a) { return a.answer < 5; });
+	poor.insert(poor.begin(), answer, all.end());
+	all.erase(answer, all.end());
 }
 
 void rasymas(vector<dat> temp)

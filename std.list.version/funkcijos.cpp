@@ -161,6 +161,20 @@ void isskyrimas(list<dat>& poor, list<dat>& cool, list<dat> all)
 	}
 }
 
+void isskyrimas2(list<dat>& poor, list<dat>& all)
+{
+	list<dat>::iterator it;
+	for (it = all.begin(); it != all.end(); it++)
+	{
+		if (it->answer < 5) 
+		{
+			poor.insert(poor.begin(), it, all.end());
+			all.erase(it, all.end());
+			break;
+		}
+	}
+}
+
 void rasymas(list<dat> temp)
 {
 	cout << left << setw(16) << "Vardas" << left << setw(16) << "Pavarde" << left << setw(18) << "Galutinis (Vid.)" << left << setw(16) << "Galutinis(Med.)" << endl;
