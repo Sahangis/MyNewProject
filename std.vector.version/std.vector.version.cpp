@@ -1,6 +1,17 @@
-#include <time.h>
+#include "Studentas.h"
 #include "funkcijos.h"
+#include <time.h>
+#include <chrono>
+#include <algorithm>
+#include <iostream>
+#include <cmath>
 
+using std::cin;
+using std::endl;
+using std::cout;
+using std::sort;
+using std::ofstream;
+using std::to_string;
 
 int main()
 {
@@ -36,17 +47,17 @@ int main()
 					}
 				}
 			} while (!n);
-			list<dat> a;
+			vector<Studentas> a;
 			for (int i = 0; i < n; i++) a.push_back(input(i + 1));
-			a.sort(palyginimas2);
+			sort(a.begin(), a.end(), compare);
 			rasymas(a);
 		}
 		else if (answer == "s")
 		{
 			string ax, strategy;
-			list<dat> all;
-			list<dat> poor;
-			list<dat> cool;
+			vector<Studentas> all;
+			vector<Studentas> poor;
+			vector<Studentas> cool;
 			const string DF[5] = { "kursiokai1000.txt", "kursiokai10000.txt", "kursiokai100000.txt", "kursiokai1000000.txt", "kursiokai10000000.txt" };
 			const string RF[5] = { "kietekai1000.txt", "kietekai10000.txt", "kietekai100000.txt", "kietekai1000000.txt", "kietekai10000000.txt" };
 			const string Rf[5] = { "vargsiukai1000.txt", "vargsiukai10000.txt", "vargsiukai100000.txt", "vargsiukai1000000.txt", "vargsiukai10000000.txt" };
@@ -75,11 +86,7 @@ int main()
 					all.pop_back();
 					fd.close();
 					auto sort_start = std::chrono::high_resolution_clock::now();
-					all.sort([](const dat& a, const dat& b)
-						{
-							return a.answer > b.answer;
-						});
-					isskyrimas(poor, cool, all);
+					sort(all.begin(), all.end(), comparePagalGalutiniBala);
 					if (strategy == "1")
 					{
 						isskyrimas(poor, cool, all);
@@ -140,7 +147,7 @@ int main()
 			{
 				for (int k = 0; k < 1000; k++)
 				{
-					dat dummy = generavimas(quantity);
+					Studentas dummy = generavimas(quantity);
 					outputas(output, dummy, true);
 				}
 				fr << output;
