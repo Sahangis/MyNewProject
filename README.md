@@ -1,7 +1,7 @@
-# **Release v1.0**
+# **Release v1.1**
 
 ## **Aprašymas**
-Čia yra programos, kurios skaičiuoja mokinių metinį įvertinimą ir surusiuoja mokinius į dvi atskiras grupes: kietekus ir vargsiukus, metinio formulė atrodo taip:
+Čia yra programa, kuri skaičiuoja mokinių metinį įvertinimą ir surusiuoja mokinius į dvi atskiras grupes: kietekus ir vargsiukus, metinio formulė atrodo taip:
 
 1. **Metinis** = 0.4 * **vidurkis** + 0.6 * **egzaminas** 
 
@@ -9,30 +9,14 @@ Kietekų sarašui pretenduoja studentai, kurių metinis įvertinimas yra didesni
 
 Vargšiukų saraše lieka tie studentai, kurių metinis įvertinimas yra mažesnis nei 5.
 
-Programos yra analogiškos su vienu esminiu skirtumu:
-  1 programa: saugoja duomenis vektoriuose
-  2 programa: saugoja duomenis listuose
-  3 programa: saugoja duomenis dequose
+programa: saugoja duomenis vektoriuose ir atlieka skaičiavimus su objektiniu pagrindu(naudoja klases)
 
 ## **Failai**
 Užduotį sudaro šie failai:
-1. main.cpp
-2. funkcijos.cpp
-3. funkcijos.h
+1. std.vector.version.cpp
+2. Studentai.cpp
+3. Studentai.h
 4. Makefile
-
-## **Apie ankstesnius releasus:**
-
-v0.1 release buvo labai preliminari versija programos, kuri galėjo tik skaičiuoti ar generuoti į consolę galutinius studentų įverčius(pagal vidurkį, arba medianą)
-
-v0.2 release versijoje buvo pagrindinis pokytis, jog atsirado duomenų skaitymo iš failų funkcija, kuri pagrinde buvo tobulinta kitose versijose.
-
-v0.3 release versijoje buvo pagražintas "behind the scenes" kodas, nes buvo įdėtas header failas ir išskirtos funkcijos į atskirą cpp faila,
-taip pat buvo pridėtas try/catch, gebantis atpažinti ar duomenų failai egzistuoja.
-
-v0.4 release buvo pridėti rezultatų failai, suskirstantys: kietekus ir vargšiukus studentus, kurių vidurkis >=5 ir kuriu <5
-
-v0.5 release versijoje buvo sukurti 3 skirtingi programos variantai, naudojantys 3 skirtingus duomenų saugojimo metodus: Vektorius, Listus ir Dequs
 
 ## **Instrukcijos**
 Programos naudojimo gidas:
@@ -49,209 +33,102 @@ strategija 1 - duomenys saugojami į vieną sarašą, iš kurio duomenys veliau 
 
 strategija 2 - duomenys saugojami viename saraše, iš kurio dalis duomenų yra perkeliama į vieną naują sarašą.
 
-## **v1.0 veikimo analizė**
+## **v1.1 veikimo analizė**
 ---------------------------------------------------------------------------------------------------------------------------
 
-Vector version:
+Vector version default make (no flags):
 
 ---------------------------------------------------- 1 strategy ------------------------------------------------------
 
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0002934 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0022506 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0197037 s
-
 kursiokai1000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.269534 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 3.255 s
 
 kursiokai10000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 2.71317 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 58.7458 s
 
 ---------------------------------------------------- 2 strategy ------------------------------------------------------
 
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0001339 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0014184 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0097072 s
-
 kursiokai1000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.137629 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 3.11569 s
 
 kursiokai10000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.37005 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 57.2822 s
 
 Vector išvada: 2 strategija spartesnė
 
+-----------------------------------------------------------------------------------------------------------------------
 
-List version:
-
----------------------------------------------------- 1 strategy ------------------------------------------------------
-
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0005614 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0061552 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.110122 s
-
-kursiokai1000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 1.65188 s
-
-kursiokai10000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 20.9367 s
-
----------------------------------------------------- 2 strategy ------------------------------------------------------
-
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0003982 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0043745 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0833509 s
-
-kursiokai1000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.38199 s
-
-kursiokai10000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 18.1372 s
-
-List išvada: 2 strategija spartesnė
-
-
-Deque version:
-
----------------------------------------------------- 1 strategy ------------------------------------------------------
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0006824 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0067419 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0773052 s
-
-kursiokai1000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 1.21884 s
-
-kursiokai10000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 15.024 s
-
----------------------------------------------------- 2 strategy ------------------------------------------------------
-
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0004766 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0050355 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0530681 s
-
-kursiokai1000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.972324 s
-
-kursiokai10000000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 12.4597 s
-
-Deque išvada: 2 strategija spartesnė
-
-
-Upgraded Vector version(prideta find if isskyrimuose):
+Old Vector default version with structs:
 
 ---------------------------------------------------- 1 strategy ------------------------------------------------------
 
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0001835 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0022127 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.0179987 s
-
 kursiokai1000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 0.206917 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 1.97944 s
 
 kursiokai10000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 2.08498 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: 24.1647 s
 
 ---------------------------------------------------- 2 strategy ------------------------------------------------------
 
-kursiokai1000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0001397 s
-
-kursiokai10000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0013618 s
-
-kursiokai100000.txt
-
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.0098911 s
-
 kursiokai1000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 0.138639 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.94525 s
 
 kursiokai10000000.txt
 
-Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.50053 s
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 22.9408 s
 
+List išvada: old struct vector version spartesnė abejomis strategijomis
 
-Upgraded Vector išvada: 2 strategija spartesnė
+----------------------------------------------------------------------------------------------------------------------
+
+**Flagų testavimam naudojama 2 strategija kuri spartesnė**
+
+Make version with flag -01 :
+
+kursiokai1000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.67053 s
+
+kursiokai10000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 39.6206 s
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Make version with flag -02 :
+
+kursiokai1000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.64859 s
+
+kursiokai10000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 38.112 s
+
+-------------------------------------------------------------------------------------------------------------------------
+Make version with flag -03 :
+
+kursiokai1000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 1.63881 s
+
+kursiokai10000000.txt
+
+Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: 38.0752 s
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-Galutinė išvada: Upgrades padėjo programai su pirma strategija, tačiau minimaliai palėtino antrąją strategiją.
+Galutinė išvada: Visi skaičiavimai buvo atlikti su tais pačiais duomenų failais, ankstesnė struct versija atrodo greitesnė nei dabartinė class versija,
+tačiau optimizavimo flagai smarkiai padėjo veikimo spartai, nors greičio skirtumas tarp -01, -02 ir -03 flagų buvo mažas, skirtumas tarp jų ir orginalo buvo apie 1/3 pradinio greičio.
 
-Veikimo sparta pagal programas: 1. Upgraded Vektoriai, 2. Vektoriai, 3. Deqai, 4. Listai
+Veikimo sparta pagal programas: flag -03, flag -02, flag -01, no flag default.
  
 ---------------------------------------------------------------------------------------------------------------------------
 Testavimams buvo naudojama:
