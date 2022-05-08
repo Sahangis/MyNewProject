@@ -24,6 +24,12 @@ public:
     const string &vardas() const { return vardas_; }    
     const string &pavarde() const { return pavarde_; }  
 	const vector<double>& pazymiai() const { return nd_; }
+    //1st. rule - Copy constructor
+    Studentas(const Studentas& source);
+    //2nd. rule - Overloaded Assignment
+    Studentas& operator=(const Studentas& source);
+    //3rd. rule - Destructor
+    ~Studentas();
     double egzaminas() const { return egzaminas_; }  
     double galutinisBalas(double (*sudedamas) (const vector<double>&)) const;  
 };
