@@ -25,6 +25,36 @@ const string pavardes[16] = { "Dauksa", "Radvanas", "Marcinkevicius", "Kafka", "
 //Ja modifikavus i klase, o taip pat atsizvelgiant i anksciau sukurtas funkcijas, kurios operavo su Studentas tipo objektais, preliminarus antrastes(header) failas Studentas.h / Studentas.hpp:
 
 // Reikia includinti visas priklausomybes: <iostream>, <string>, <vector>, "mediana.h"
+//1st. rule - copy constructor
+Studentas::Studentas(const Studentas& source)
+{
+	vardas_ = source.vardas_;
+	pavarde_ = source.pavarde_;
+	egzaminas_ = source.egzaminas_;
+	nd_ = source.nd_;
+}
+
+//2nd. rule - overloaded assignment operator
+Studentas& Studentas::operator=(const Studentas& source)
+{
+	// check for self assignment
+	if (this == &source)
+	{
+		return *this;
+	}
+	vardas_ = source.vardas_;
+	pavarde_ = source.pavarde_;
+	egzaminas_ = source.egzaminas_;
+	nd_ = source.nd_;
+	return *this;
+}
+
+//3rd. rule - destructor
+Studentas::~Studentas()
+{
+	
+}
+
 double mediana(const vector<double>&pazymiai)
 {
 	if (pazymiai.size() / 2 == 1) return pazymiai[pazymiai.size() / 2];
