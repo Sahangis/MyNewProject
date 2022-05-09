@@ -138,3 +138,6 @@ Testavimams buvo naudojama:
    -RAM: 32 Gb
  
    -SSD: 1 Tb (500 Gb x2)
+
+|1|2|
+|5|4|
