@@ -29,4 +29,18 @@ Programos naudojimo gidas:
 6. jei pasirinkta skaityti duomenis iš failo, programa paklausia, kurį failą skaityti, kokia strategija atlikti skaičiavimus ir tada nuskaito visus duomenis iš pasirinkto krusiokai(1000-10000000).txt failo ir išspausdina atsakymus.
 7. visus duomenis programa išrykiuoja pagal mokinių metinį ivertį.
 
-- Update: pridėti Rule of Three klasių metodai: Copy constructor, Overloaded assignment operator, Destructor
+Galutinė išvada: Visi skaičiavimai buvo atlikti su tais pačiais duomenų failais, ankstesnė struct versija atrodo greitesnė nei dabartinė class versija,
+tačiau optimizavimo flagai smarkiai padėjo veikimo spartai, nors greičio skirtumas tarp -01, -02 ir -03 flagų buvo mažas, skirtumas tarp jų ir orginalo buvo apie 1/3 pradinio greičio.
+
+Veikimo sparta pagal programas: flag -03, flag -02, flag -01, no flag default.
+ 
+---------------------------------------------------------------------------------------------------------------------------
+Testavimams buvo naudojama:
+
+   -CPU: AMD Ryzen 7 3800X 8-Core Processor (16 CPUs) ~3.9GHz
+ 
+   -RAM: 32 Gb
+ 
+   -SSD: 1 Tb (500 Gb x2)
+
+
