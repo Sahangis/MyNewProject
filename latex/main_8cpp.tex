@@ -1,0 +1,180 @@
+\hypertarget{main_8cpp}{}\doxysection{source/main.cpp File Reference}
+\label{main_8cpp}\index{source/main.cpp@{source/main.cpp}}
+{\ttfamily \#include \char`\"{}Studentas.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \textcolor{keywordtype}{string} answer, ats;}
+\DoxyCodeLine{00019     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00020         cout << \textcolor{stringliteral}{"{}ar norite kruti rezultatu faila ? \{0\} ar norite generuoti 5 duomenu failus ? \{1\} (Duomenys saugomi Listuose)"{}} << endl;}
+\DoxyCodeLine{00021         cin >> ats;}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{if} (ats != \textcolor{stringliteral}{"{}1"{}} \&\& ats != \textcolor{stringliteral}{"{}0"{}}) cout << \textcolor{stringliteral}{"{}ivesta reiksme netinkama, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{00023     \} \textcolor{keywordflow}{while} (ats != \textcolor{stringliteral}{"{}1"{}} \&\& ats != \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{if} (ats == \textcolor{stringliteral}{"{}0"{}})}
+\DoxyCodeLine{00025     \{}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00027             cout << \textcolor{stringliteral}{"{}ar norite ivesti visas reiksmes pats ? (y/s), s atveju programa skaitys visus duomenis is sugeneruotu failu"{}} << endl;}
+\DoxyCodeLine{00028             cin >> answer;}
+\DoxyCodeLine{00029             \textcolor{keywordflow}{if} (answer != \textcolor{stringliteral}{"{}y"{}} \&\& answer != \textcolor{stringliteral}{"{}s"{}}) cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel "{}} << endl;}
+\DoxyCodeLine{00030         \} \textcolor{keywordflow}{while} (answer != \textcolor{stringliteral}{"{}y"{}} \&\& answer != \textcolor{stringliteral}{"{}s"{}});}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{if} (answer == \textcolor{stringliteral}{"{}y"{}})}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{00034             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00035                 cout << \textcolor{stringliteral}{"{}iveskite kiek mokiniu bus vedami duomenys (n>0)"{}} << endl;}
+\DoxyCodeLine{00036                 cin >> n;}
+\DoxyCodeLine{00037                 \textcolor{keywordflow}{if} (!n) cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{00038                 cin.clear();}
+\DoxyCodeLine{00039                 cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00040                 \textcolor{keywordflow}{if} (n)}
+\DoxyCodeLine{00041                 \{}
+\DoxyCodeLine{00042                     \textcolor{keywordflow}{if} (n < 0)}
+\DoxyCodeLine{00043                     \{}
+\DoxyCodeLine{00044                         cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{00045                         n = !n;}
+\DoxyCodeLine{00046                     \}}
+\DoxyCodeLine{00047                 \}}
+\DoxyCodeLine{00048             \} \textcolor{keywordflow}{while} (!n);}
+\DoxyCodeLine{00049             vector<Studentas> a;}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++) a.push\_back(\mbox{\hyperlink{Studentas_8h_ad1434f7dc63c38cdddab03aa9857d65e}{input}}(i + 1));}
+\DoxyCodeLine{00051             sort(a.begin(), a.end(), \mbox{\hyperlink{Studentas_8h_ab61fdda5da1fd7d3128ca416c9dcd00b}{compare}});}
+\DoxyCodeLine{00052             \mbox{\hyperlink{Studentas_8h_aa13052ed3d778dd30654b58c0051f343}{rasymas}}(a);}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (answer == \textcolor{stringliteral}{"{}s"{}})}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             \textcolor{keywordtype}{string} ax, strategy;}
+\DoxyCodeLine{00057             vector<Studentas> all;}
+\DoxyCodeLine{00058             vector<Studentas> poor;}
+\DoxyCodeLine{00059             vector<Studentas> cool;}
+\DoxyCodeLine{00060             \textcolor{keyword}{const} \textcolor{keywordtype}{string} DF[5] = \{ \textcolor{stringliteral}{"{}kursiokai1000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai100000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai1000000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000000.txt"{}} \};}
+\DoxyCodeLine{00061             \textcolor{keyword}{const} \textcolor{keywordtype}{string} RF[5] = \{ \textcolor{stringliteral}{"{}kietekai1000.txt"{}}, \textcolor{stringliteral}{"{}kietekai10000.txt"{}}, \textcolor{stringliteral}{"{}kietekai100000.txt"{}}, \textcolor{stringliteral}{"{}kietekai1000000.txt"{}}, \textcolor{stringliteral}{"{}kietekai10000000.txt"{}} \};}
+\DoxyCodeLine{00062             \textcolor{keyword}{const} \textcolor{keywordtype}{string} Rf[5] = \{ \textcolor{stringliteral}{"{}vargsiukai1000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai10000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai100000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai1000000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai10000000.txt"{}} \};}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00064                 cout << \textcolor{stringliteral}{"{}Pasirinkite, kokia skaidymo strategija naudoti 1 ar 2 ?"{}} << endl;}
+\DoxyCodeLine{00065                 cin >> strategy;}
+\DoxyCodeLine{00066                 \textcolor{keywordflow}{if} (strategy != \textcolor{stringliteral}{"{}1"{}} \&\& strategy != \textcolor{stringliteral}{"{}2"{}}) cout << \textcolor{stringliteral}{"{}ivesta netinkama strategija, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{00067             \} \textcolor{keywordflow}{while} (strategy != \textcolor{stringliteral}{"{}1"{}} \&\& strategy != \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00068             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)}
+\DoxyCodeLine{00069             \{}
+\DoxyCodeLine{00070                 ifstream fd;}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{Studentas_8h_a42c606586e8fe6e641f8bb5b604ddb75}{FileExists}}(DF[i])) fd.exceptions(ifstream::failbit | ifstream::badbit);}
+\DoxyCodeLine{00072                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00073                 \{}
+\DoxyCodeLine{00074                     cout << DF[i] << endl;}
+\DoxyCodeLine{00075                     fd.open(DF[i]);}
+\DoxyCodeLine{00076                     \textcolor{keywordtype}{string} filler;}
+\DoxyCodeLine{00077                     \textcolor{keywordtype}{int} pazymiai = 0;}
+\DoxyCodeLine{00078                     fd >> filler;}
+\DoxyCodeLine{00079                     fd >> filler;}
+\DoxyCodeLine{00080                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00081                         fd >> filler;}
+\DoxyCodeLine{00082                         \textcolor{keywordflow}{if} (filler[0] == \textcolor{charliteral}{'N'}) pazymiai++;}
+\DoxyCodeLine{00083                     \} \textcolor{keywordflow}{while} (filler[0] == \textcolor{charliteral}{'N'});}
+\DoxyCodeLine{00084                     \textcolor{keywordflow}{while} (!fd.eof()) all.push\_back(\mbox{\hyperlink{Studentas_8h_abf3d6f72641752baeb2d2acbf1528b1f}{skaitymas}}(pazymiai, fd));}
+\DoxyCodeLine{00085                     all.pop\_back();}
+\DoxyCodeLine{00086                     fd.close();}
+\DoxyCodeLine{00087                     \textcolor{keyword}{auto} sort\_start = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00088                     sort(all.begin(), all.end(), \mbox{\hyperlink{Studentas_8h_ad7936bd281ee056b5555402dbc54539f}{comparePagalGalutiniBala}});}
+\DoxyCodeLine{00089                     \textcolor{keywordflow}{if} (strategy == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{00090                     \{}
+\DoxyCodeLine{00091                         \mbox{\hyperlink{Studentas_8h_aa73e70e8ebd29631f6f78f8277ba9161}{isskyrimas}}(poor, cool, all);}
+\DoxyCodeLine{00092                         \textcolor{keyword}{auto} sort\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00093                         std::chrono::duration<double> sort\_diff = sort\_end -\/ sort\_start;}
+\DoxyCodeLine{00094                         std::cout << \textcolor{stringliteral}{"{}Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: "{}} << sort\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{00095                     \}}
+\DoxyCodeLine{00096                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097                     \{}
+\DoxyCodeLine{00098                         \mbox{\hyperlink{Studentas_8h_a4e11009b633d873bc27a8f28e86be69a}{isskyrimas2}}(poor, all);}
+\DoxyCodeLine{00099                         \textcolor{keyword}{auto} sort\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00100                         std::chrono::duration<double> sort\_diff = sort\_end -\/ sort\_start;}
+\DoxyCodeLine{00101                         std::cout << \textcolor{stringliteral}{"{}Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: "{}} << sort\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{00102                     \}}
+\DoxyCodeLine{00103                 \}}
+\DoxyCodeLine{00104                 \textcolor{keywordflow}{catch} (ifstream::failure e) \{}
+\DoxyCodeLine{00105                     cout << e.what() << endl;}
+\DoxyCodeLine{00106                     exit(-\/1);}
+\DoxyCodeLine{00107                 \}}
+\DoxyCodeLine{00108                 \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(poor, Rf[i]);}
+\DoxyCodeLine{00109                 \textcolor{keywordflow}{if} (strategy == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{00110                 \{}
+\DoxyCodeLine{00111                     \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(cool, RF[i]);}
+\DoxyCodeLine{00112                     cool.clear();}
+\DoxyCodeLine{00113                 \}}
+\DoxyCodeLine{00114                 \textcolor{keywordflow}{else} \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(all, RF[i]);}
+\DoxyCodeLine{00115                 system(\textcolor{stringliteral}{"{}PAUSE"{}});}
+\DoxyCodeLine{00116                 all.clear();}
+\DoxyCodeLine{00117                 poor.clear();}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \}}
+\DoxyCodeLine{00121     \}}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ats == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{00123     \{}
+\DoxyCodeLine{00124         \textcolor{keywordtype}{int} quantity;}
+\DoxyCodeLine{00125         \textcolor{keyword}{const} \textcolor{keywordtype}{string} RF[5] = \{ \textcolor{stringliteral}{"{}kursiokai1000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai100000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai1000000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000000.txt"{}} \};}
+\DoxyCodeLine{00126         srand(time(NULL));}
+\DoxyCodeLine{00127         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)}
+\DoxyCodeLine{00128         \{}
+\DoxyCodeLine{00129             \textcolor{keyword}{auto} create\_start = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00130             \textcolor{keywordtype}{string} output = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00131             ofstream fr(RF[i]);}
+\DoxyCodeLine{00132             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00133                 quantity = (double)rand() / RAND\_MAX * 7;}
+\DoxyCodeLine{00134             \} \textcolor{keywordflow}{while} (quantity == 0);}
+\DoxyCodeLine{00135             output = \textcolor{stringliteral}{"{}Vardas                   Pavarde             "{}};}
+\DoxyCodeLine{00136             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j <= quantity; j++)}
+\DoxyCodeLine{00137             \{}
+\DoxyCodeLine{00138                 \textcolor{keywordtype}{string} atribute = \textcolor{stringliteral}{"{}ND"{}};}
+\DoxyCodeLine{00139                 atribute += to\_string(j);}
+\DoxyCodeLine{00140                 \textcolor{keywordtype}{int} length = atribute.length();}
+\DoxyCodeLine{00141                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 10 -\/ length; k++) atribute.insert(0, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{00142                 output += atribute;}
+\DoxyCodeLine{00143             \}}
+\DoxyCodeLine{00144             output += \textcolor{stringliteral}{"{}      Egz.\(\backslash\)n"{}};}
+\DoxyCodeLine{00145             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 1 * pow(10, i); j++)}
+\DoxyCodeLine{00146             \{}
+\DoxyCodeLine{00147                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 1000; k++)}
+\DoxyCodeLine{00148                 \{}
+\DoxyCodeLine{00149                     \mbox{\hyperlink{classStudentas}{Studentas}} dummy = \mbox{\hyperlink{Studentas_8h_a6744405ab25462c0b36f0cb2895b68ac}{generavimas}}(quantity);}
+\DoxyCodeLine{00150                     \mbox{\hyperlink{Studentas_8h_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}}(output, dummy, \textcolor{keyword}{true});}
+\DoxyCodeLine{00151                 \}}
+\DoxyCodeLine{00152                 fr << output;}
+\DoxyCodeLine{00153                 output = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00154             \}}
+\DoxyCodeLine{00155             fr.close();}
+\DoxyCodeLine{00156             \textcolor{keyword}{auto} create\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00157             std::chrono::duration<double> create\_diff = create\_end -\/ create\_start;}
+\DoxyCodeLine{00158             std::cout << \textcolor{stringliteral}{"{}sukurtas: "{}} << RF[i] << \textcolor{stringliteral}{"{}, kuris uztruko: "{}} << create\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{00159         \}   }
+\DoxyCodeLine{00160     \}}
+\DoxyCodeLine{00161     system(\textcolor{stringliteral}{"{}PAUSE"{}});}
+\DoxyCodeLine{00162     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00163 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,436 @@
+\hypertarget{Studentas_8cpp}{}\doxysection{source/\+Studentas.cpp File Reference}
+\label{Studentas_8cpp}\index{source/Studentas.cpp@{source/Studentas.cpp}}
+{\ttfamily \#include \char`\"{}Studentas.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for Studentas.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}{mediana}} (const vector$<$ double $>$ \&pazymiai)
+\item 
+double \mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}} (const vector$<$ double $>$ \&pazymiai)
+\item 
+bool \mbox{\hyperlink{Studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}{compare}} (const \mbox{\hyperlink{classStudentas}{Studentas}} \&a, const \mbox{\hyperlink{classStudentas}{Studentas}} \&b)
+\item 
+bool \mbox{\hyperlink{Studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}{compare\+Pagal\+Pavarde}} (const \mbox{\hyperlink{classStudentas}{Studentas}} \&a, const \mbox{\hyperlink{classStudentas}{Studentas}} \&b)
+\item 
+bool \mbox{\hyperlink{Studentas_8cpp_ad7936bd281ee056b5555402dbc54539f}{compare\+Pagal\+Galutini\+Bala}} (const \mbox{\hyperlink{classStudentas}{Studentas}} \&a, const \mbox{\hyperlink{classStudentas}{Studentas}} \&b)
+\item 
+\mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_abf3d6f72641752baeb2d2acbf1528b1f}{skaitymas}} (int n, ifstream \&fd)
+\item 
+\mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_ad1434f7dc63c38cdddab03aa9857d65e}{input}} (int i)
+\item 
+\mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_a6744405ab25462c0b36f0cb2895b68ac}{generavimas}} (int quantity)
+\item 
+void \mbox{\hyperlink{Studentas_8cpp_aa73e70e8ebd29631f6f78f8277ba9161}{isskyrimas}} (vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&poor, vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&cool, vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&all)
+\item 
+void \mbox{\hyperlink{Studentas_8cpp_a4e11009b633d873bc27a8f28e86be69a}{isskyrimas2}} (vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&poor, vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&all)
+\item 
+bool \mbox{\hyperlink{Studentas_8cpp_a42c606586e8fe6e641f8bb5b604ddb75}{File\+Exists}} (const string \&filename)
+\item 
+void \mbox{\hyperlink{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}} (string \&output, const \mbox{\hyperlink{classStudentas}{Studentas}} \&a, bool kurimas)
+\item 
+void \mbox{\hyperlink{Studentas_8cpp_aa13052ed3d778dd30654b58c0051f343}{rasymas}} (const vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&temp)
+\item 
+void \mbox{\hyperlink{Studentas_8cpp_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\+\_\+s}} (const vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&temp, const string \&RF)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}{vardai}} \mbox{[}16\mbox{]} = \{ \char`\"{}Martynas\char`\"{}, \char`\"{}Jonas\char`\"{}, \char`\"{}Vilijamas\char`\"{}, \char`\"{}Kristijonas\char`\"{}, \char`\"{}Vincas\char`\"{}, \char`\"{}Alberas\char`\"{}, \char`\"{}Francas\char`\"{} , \char`\"{}Juozas\char`\"{}, \char`\"{}Jurgis\char`\"{}, \char`\"{}Antanas\char`\"{}, \char`\"{}Henrikas\char`\"{}, \char`\"{}Balys\char`\"{}, \char`\"{}Augustas\char`\"{}, \char`\"{}Justinas\char`\"{}, \char`\"{}Ernestas\char`\"{}, \char`\"{}Hansas\char`\"{} \}
+\item 
+const string \mbox{\hyperlink{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}{pavardes}} \mbox{[}16\mbox{]} = \{ \char`\"{}Dauksa\char`\"{}, \char`\"{}Radvanas\char`\"{}, \char`\"{}Marcinkevicius\char`\"{}, \char`\"{}Kafka\char`\"{}, \char`\"{}Kamiu\char`\"{}, \char`\"{}Kudirka\char`\"{}, \char`\"{}Shekspyras\char`\"{}, \char`\"{}Donelaitis\char`\"{}, \char`\"{}Mickevicius\char`\"{}, \char`\"{}Biliunas\char`\"{}, \char`\"{}Vaizgantas\char`\"{}, \char`\"{}Radauskas\char`\"{}, \char`\"{}Krivickas\char`\"{}, \char`\"{}Savickis\char`\"{}, \char`\"{}Sruoga\char`\"{}, \char`\"{}Katiliskis\char`\"{} \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}\label{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}} 
+\index{Studentas.cpp@{Studentas.cpp}!average@{average}}
+\index{average@{average}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{average()}{average()}}
+{\footnotesize\ttfamily double average (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{pazymiai }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034 \{}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pazymys : pazymiai)}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038         sum += pazymys;}
+\DoxyCodeLine{00039     \}}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{return} sum / pazymiai.size();}
+\DoxyCodeLine{00041 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}\label{Studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}} 
+\index{Studentas.cpp@{Studentas.cpp}!compare@{compare}}
+\index{compare@{compare}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily bool compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{a,  }\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049 \{}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}() < b.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}();}
+\DoxyCodeLine{00051 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_ad7936bd281ee056b5555402dbc54539f}\label{Studentas_8cpp_ad7936bd281ee056b5555402dbc54539f}} 
+\index{Studentas.cpp@{Studentas.cpp}!comparePagalGalutiniBala@{comparePagalGalutiniBala}}
+\index{comparePagalGalutiniBala@{comparePagalGalutiniBala}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{comparePagalGalutiniBala()}{comparePagalGalutiniBala()}}
+{\footnotesize\ttfamily bool compare\+Pagal\+Galutini\+Bala (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{a,  }\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) > b.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}});}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}\label{Studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}} 
+\index{Studentas.cpp@{Studentas.cpp}!comparePagalPavarde@{comparePagalPavarde}}
+\index{comparePagalPavarde@{comparePagalPavarde}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{comparePagalPavarde()}{comparePagalPavarde()}}
+{\footnotesize\ttfamily bool compare\+Pagal\+Pavarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{a,  }\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 \{}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}() < b.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}();}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a42c606586e8fe6e641f8bb5b604ddb75}\label{Studentas_8cpp_a42c606586e8fe6e641f8bb5b604ddb75}} 
+\index{Studentas.cpp@{Studentas.cpp}!FileExists@{FileExists}}
+\index{FileExists@{FileExists}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{FileExists()}{FileExists()}}
+{\footnotesize\ttfamily bool File\+Exists (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166 \{}
+\DoxyCodeLine{00167     ifstream file(filename);}
+\DoxyCodeLine{00168     \textcolor{keywordflow}{if} (file.is\_open())}
+\DoxyCodeLine{00169     \{}
+\DoxyCodeLine{00170         file.close();}
+\DoxyCodeLine{00171         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     \}}
+\DoxyCodeLine{00174     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00175     \{}
+\DoxyCodeLine{00176         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00177     \}}
+\DoxyCodeLine{00178 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a6744405ab25462c0b36f0cb2895b68ac}\label{Studentas_8cpp_a6744405ab25462c0b36f0cb2895b68ac}} 
+\index{Studentas.cpp@{Studentas.cpp}!generavimas@{generavimas}}
+\index{generavimas@{generavimas}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{generavimas()}{generavimas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStudentas}{Studentas}} generavimas (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130 \{}
+\DoxyCodeLine{00131     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{00132     vector<double> pazymiai;}
+\DoxyCodeLine{00133     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{00134     \textcolor{keywordtype}{int} index = (double)rand() / RAND\_MAX * 15.9;}
+\DoxyCodeLine{00135     vardas = \mbox{\hyperlink{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}{vardai}}[index];}
+\DoxyCodeLine{00136     \textcolor{keywordtype}{int} index2 = (double)rand() / RAND\_MAX * 15.9;}
+\DoxyCodeLine{00137     pavarde = \mbox{\hyperlink{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}{pavardes}}[index2];}
+\DoxyCodeLine{00138     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{00139     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < quantity; i++)}
+\DoxyCodeLine{00140     \{}
+\DoxyCodeLine{00141         \textcolor{keywordtype}{int} value = (double)rand() / RAND\_MAX * 10.9;}
+\DoxyCodeLine{00142         pazymiai.push\_back(value);}
+\DoxyCodeLine{00143         sum += value;}
+\DoxyCodeLine{00144     \}}
+\DoxyCodeLine{00145     \textcolor{keywordtype}{int} egz = (double)rand() / RAND\_MAX * 10.9;}
+\DoxyCodeLine{00146     egzaminas = egz;}
+\DoxyCodeLine{00147     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{00148 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_ad1434f7dc63c38cdddab03aa9857d65e}\label{Studentas_8cpp_ad1434f7dc63c38cdddab03aa9857d65e}} 
+\index{Studentas.cpp@{Studentas.cpp}!input@{input}}
+\index{input@{input}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStudentas}{Studentas}} input (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083 \{}
+\DoxyCodeLine{00084     \mbox{\hyperlink{classStudentas}{Studentas}} temp;}
+\DoxyCodeLine{00085     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00087         cout << \textcolor{stringliteral}{"{}iveskite "{}} << i << \textcolor{stringliteral}{"{} -\/ojo mokinio varda(ilgis ne daugiau 15 simboliu): "{}} << endl;}
+\DoxyCodeLine{00088         cin >> vardas;}
+\DoxyCodeLine{00089         \textcolor{keywordflow}{if} (vardas.length() >= 16) cout << \textcolor{stringliteral}{"{}ivestas per ilgas vardas, prasome ivesti trumpesni"{}} << endl;}
+\DoxyCodeLine{00090     \} \textcolor{keywordflow}{while} (vardas.length() >= 16);}
+\DoxyCodeLine{00091     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00092         cout << \textcolor{stringliteral}{"{}iveskite "{}} << i << \textcolor{stringliteral}{"{} -\/ojo mokinio pavarde(ilgis ne daugiau 15 simboliu): "{}} << endl;}
+\DoxyCodeLine{00093         cin >> pavarde;}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{if} (pavarde.length() >= 16) cout << \textcolor{stringliteral}{"{}ivesta per ilga pavarde, prasome ivesti trumpesne"{}} << endl;}
+\DoxyCodeLine{00095     \} \textcolor{keywordflow}{while} (pavarde.length() >= 16);}
+\DoxyCodeLine{00096     \textcolor{keywordtype}{bool} inFail;}
+\DoxyCodeLine{00097     \textcolor{keywordtype}{int} sk;}
+\DoxyCodeLine{00098     vector<double> pazymiai;}
+\DoxyCodeLine{00099     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00101         \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{00102         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00103             cout << \textcolor{stringliteral}{"{}iveskite "{}} << j + 1 << \textcolor{stringliteral}{"{} pazimi"{}} << endl;}
+\DoxyCodeLine{00104             cin >> sk;}
+\DoxyCodeLine{00105             inFail = cin.fail();}
+\DoxyCodeLine{00106             cin.clear();}
+\DoxyCodeLine{00107             cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00108             \textcolor{keywordflow}{if} (!inFail)}
+\DoxyCodeLine{00109             \{}
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{if} (sk > 10 || sk < 0) inFail = \textcolor{keyword}{true};}
+\DoxyCodeLine{00111                 \textcolor{keywordflow}{else} pazymiai.push\_back(sk);}
+\DoxyCodeLine{00112             \}}
+\DoxyCodeLine{00113             j++;}
+\DoxyCodeLine{00114         \} \textcolor{keywordflow}{while} (!inFail);}
+\DoxyCodeLine{00115         \textcolor{keywordflow}{if} (pazymiai.size() == 0) cout << \textcolor{stringliteral}{"{}Negalime skaiciuoti rezultatu su mokiniu kuris neturi pazymiu, prasome vesti vel"{}} << endl;}
+\DoxyCodeLine{00116     \} \textcolor{keywordflow}{while} (pazymiai.size() == 0);}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00119         cout << \textcolor{stringliteral}{"{}iveskite egzamino rezultata"{}} << endl;}
+\DoxyCodeLine{00120         cin >> egzaminas;}
+\DoxyCodeLine{00121         inFail = cin.fail();}
+\DoxyCodeLine{00122         cin.clear();}
+\DoxyCodeLine{00123         cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00124         \textcolor{keywordflow}{if} (!inFail) \textcolor{keywordflow}{if} (egzaminas > 10 || egzaminas < 0) inFail = \textcolor{keyword}{true};}
+\DoxyCodeLine{00125     \} \textcolor{keywordflow}{while} (inFail);}
+\DoxyCodeLine{00126     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{00127 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_aa73e70e8ebd29631f6f78f8277ba9161}\label{Studentas_8cpp_aa73e70e8ebd29631f6f78f8277ba9161}} 
+\index{Studentas.cpp@{Studentas.cpp}!isskyrimas@{isskyrimas}}
+\index{isskyrimas@{isskyrimas}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{isskyrimas()}{isskyrimas()}}
+{\footnotesize\ttfamily void isskyrimas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{poor,  }\item[{vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{cool,  }\item[{vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{all }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151 \{}
+\DoxyCodeLine{00152     \textcolor{keyword}{auto} answer = std::find\_if(all.begin(), all.end(), [](\mbox{\hyperlink{classStudentas}{Studentas}} a) \{ return a.galutinisBalas(average) < 5; \});}
+\DoxyCodeLine{00153     poor.insert(poor.begin(), answer, all.end());}
+\DoxyCodeLine{00154     all.erase(answer, all.end());}
+\DoxyCodeLine{00155     cool.insert(cool.begin(), all.begin(), all.end());}
+\DoxyCodeLine{00156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a4e11009b633d873bc27a8f28e86be69a}\label{Studentas_8cpp_a4e11009b633d873bc27a8f28e86be69a}} 
+\index{Studentas.cpp@{Studentas.cpp}!isskyrimas2@{isskyrimas2}}
+\index{isskyrimas2@{isskyrimas2}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{isskyrimas2()}{isskyrimas2()}}
+{\footnotesize\ttfamily void isskyrimas2 (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{poor,  }\item[{vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{all }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159 \{}
+\DoxyCodeLine{00160     \textcolor{keyword}{auto} answer = std::find\_if(all.begin(), all.end(), [](\mbox{\hyperlink{classStudentas}{Studentas}} a) \{ return a.galutinisBalas(average) < 5; \});}
+\DoxyCodeLine{00161     poor.insert(poor.begin(), answer, all.end());}
+\DoxyCodeLine{00162     all.erase(answer, all.end());}
+\DoxyCodeLine{00163 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}\label{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}} 
+\index{Studentas.cpp@{Studentas.cpp}!mediana@{mediana}}
+\index{mediana@{mediana}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{mediana()}{mediana()}}
+{\footnotesize\ttfamily double mediana (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{pazymiai }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (pazymiai.size() / 2 == 1) \textcolor{keywordflow}{return} pazymiai[pazymiai.size() / 2];}
+\DoxyCodeLine{00031     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 -\/ 1]) / 2;}
+\DoxyCodeLine{00032 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}\label{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}} 
+\index{Studentas.cpp@{Studentas.cpp}!outputas@{outputas}}
+\index{outputas@{outputas}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{outputas()}{outputas()}}
+{\footnotesize\ttfamily void outputas (\begin{DoxyParamCaption}\item[{string \&}]{output,  }\item[{const \mbox{\hyperlink{classStudentas}{Studentas}} \&}]{a,  }\item[{bool}]{kurimas }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00180}{180}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181 \{}
+\DoxyCodeLine{00182     stringstream stream;}
+\DoxyCodeLine{00183     stream << left << setw(16) << a.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}() << left << setw(16) << a.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}();}
+\DoxyCodeLine{00184     \textcolor{keywordflow}{if} (kurimas)}
+\DoxyCodeLine{00185     \{}
+\DoxyCodeLine{00186         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < a.\mbox{\hyperlink{classStudentas_ad5fd968a90dab3dc1bcb6b693451ba81}{pazymiai}}().size(); i++)}
+\DoxyCodeLine{00187         \{}
+\DoxyCodeLine{00188             stream << left << setw(10) << fixed << setprecision(0) << a.\mbox{\hyperlink{classStudentas_ad5fd968a90dab3dc1bcb6b693451ba81}{pazymiai}}()[i];}
+\DoxyCodeLine{00189         \}}
+\DoxyCodeLine{00190         stream << left << setw(10) << fixed << setprecision(0) << a.\mbox{\hyperlink{classStudentas_a64d09da390e433eb68d7ca43e414d570}{egzaminas}}() << endl;}
+\DoxyCodeLine{00191     \}}
+\DoxyCodeLine{00192     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00193     \{}
+\DoxyCodeLine{00194         stream << a.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) << endl;}
+\DoxyCodeLine{00195     \}}
+\DoxyCodeLine{00196     output + stream.str();}
+\DoxyCodeLine{00197 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_aa13052ed3d778dd30654b58c0051f343}\label{Studentas_8cpp_aa13052ed3d778dd30654b58c0051f343}} 
+\index{Studentas.cpp@{Studentas.cpp}!rasymas@{rasymas}}
+\index{rasymas@{rasymas}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{rasymas()}{rasymas()}}
+{\footnotesize\ttfamily void rasymas (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{temp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200 \{}
+\DoxyCodeLine{00201     cout << left << setw(16) << \textcolor{stringliteral}{"{}Vardas"{}} << left << setw(16) << \textcolor{stringliteral}{"{}Pavarde"{}} << left << setw(18) << \textcolor{stringliteral}{"{}Galutinis (Vid.)"{}} << left << setw(16) << \textcolor{stringliteral}{"{}Galutinis(Med.)"{}} << endl;}
+\DoxyCodeLine{00202     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < temp.size(); i++)}
+\DoxyCodeLine{00204     \{}
+\DoxyCodeLine{00205         cout << left << setw(16) << temp[i].vardas() << left << setw(16) << temp[i].pavarde() << left << setw(18) << fixed << setprecision(2) << temp[i].galutinisBalas(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) << left << setw(18) << fixed << setprecision(2) << temp[i].galutinisBalas(\mbox{\hyperlink{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}{mediana}}) << endl;}
+\DoxyCodeLine{00206     \}}
+\DoxyCodeLine{00207 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_a444c8dd2b6a58de17beedcc0b5dbb2a2}\label{Studentas_8cpp_a444c8dd2b6a58de17beedcc0b5dbb2a2}} 
+\index{Studentas.cpp@{Studentas.cpp}!rasymas\_s@{rasymas\_s}}
+\index{rasymas\_s@{rasymas\_s}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{rasymas\_s()}{rasymas\_s()}}
+{\footnotesize\ttfamily void rasymas\+\_\+s (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classStudentas}{Studentas}} $>$ \&}]{temp,  }\item[{const string \&}]{RF }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210 \{}
+\DoxyCodeLine{00211     ofstream fr(RF);}
+\DoxyCodeLine{00212     fr << left << setw(20) << \textcolor{stringliteral}{"{}Vardas"{}} << left << setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}} << \textcolor{stringliteral}{"{}Galutinis (Vid.)"{}} << endl;}
+\DoxyCodeLine{00213     fr << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{00214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < temp.size(); i++)}
+\DoxyCodeLine{00215     \{}
+\DoxyCodeLine{00216         \textcolor{keywordtype}{string} eile = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00217         \mbox{\hyperlink{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}}(eile, temp[i], \textcolor{keyword}{false});}
+\DoxyCodeLine{00218         fr << eile;}
+\DoxyCodeLine{00219     \}}
+\DoxyCodeLine{00220     fr.close();}
+\DoxyCodeLine{00221 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Studentas_8cpp_abf3d6f72641752baeb2d2acbf1528b1f}\label{Studentas_8cpp_abf3d6f72641752baeb2d2acbf1528b1f}} 
+\index{Studentas.cpp@{Studentas.cpp}!skaitymas@{skaitymas}}
+\index{skaitymas@{skaitymas}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{skaitymas()}{skaitymas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStudentas}{Studentas}} skaitymas (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{ifstream \&}]{fd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062 \{}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{int} sk, sum = 0;}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{00065     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{00066     fd >> vardas;}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{if} (fd.eof()) \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}();}
+\DoxyCodeLine{00068     fd >> pavarde;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     vector<double> pazymiai(n);}
+\DoxyCodeLine{00071     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{00072     \{}
+\DoxyCodeLine{00073         fd >> sk;}
+\DoxyCodeLine{00074         sum += sk;}
+\DoxyCodeLine{00075         pazymiai[i] = sk;}
+\DoxyCodeLine{00076     \}}
+\DoxyCodeLine{00077     fd >> egzaminas;}
+\DoxyCodeLine{00078     \textcolor{comment}{//temp.answer = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;}}
+\DoxyCodeLine{00079     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{00080 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}\label{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}} 
+\index{Studentas.cpp@{Studentas.cpp}!pavardes@{pavardes}}
+\index{pavardes@{pavardes}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{pavardes}{pavardes}}
+{\footnotesize\ttfamily const string pavardes\mbox{[}16\mbox{]} = \{ \char`\"{}Dauksa\char`\"{}, \char`\"{}Radvanas\char`\"{}, \char`\"{}Marcinkevicius\char`\"{}, \char`\"{}Kafka\char`\"{}, \char`\"{}Kamiu\char`\"{}, \char`\"{}Kudirka\char`\"{}, \char`\"{}Shekspyras\char`\"{}, \char`\"{}Donelaitis\char`\"{}, \char`\"{}Mickevicius\char`\"{}, \char`\"{}Biliunas\char`\"{}, \char`\"{}Vaizgantas\char`\"{}, \char`\"{}Radauskas\char`\"{}, \char`\"{}Krivickas\char`\"{}, \char`\"{}Savickis\char`\"{}, \char`\"{}Sruoga\char`\"{}, \char`\"{}Katiliskis\char`\"{} \}}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+
+\mbox{\Hypertarget{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}\label{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}} 
+\index{Studentas.cpp@{Studentas.cpp}!vardai@{vardai}}
+\index{vardai@{vardai}!Studentas.cpp@{Studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{vardai}{vardai}}
+{\footnotesize\ttfamily const string vardai\mbox{[}16\mbox{]} = \{ \char`\"{}Martynas\char`\"{}, \char`\"{}Jonas\char`\"{}, \char`\"{}Vilijamas\char`\"{}, \char`\"{}Kristijonas\char`\"{}, \char`\"{}Vincas\char`\"{}, \char`\"{}Alberas\char`\"{}, \char`\"{}Francas\char`\"{} , \char`\"{}Juozas\char`\"{}, \char`\"{}Jurgis\char`\"{}, \char`\"{}Antanas\char`\"{}, \char`\"{}Henrikas\char`\"{}, \char`\"{}Balys\char`\"{}, \char`\"{}Augustas\char`\"{}, \char`\"{}Justinas\char`\"{}, \char`\"{}Ernestas\char`\"{}, \char`\"{}Hansas\char`\"{} \}}
+
+
+
+Definition at line \mbox{\hyperlink{Studentas_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Studentas_8cpp_source}{Studentas.\+cpp}}.
+

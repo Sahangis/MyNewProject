@@ -1,0 +1,169 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{source/main.cpp@{source/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Studentas_8h}{Studentas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{keyword}{using }std::cin;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{keyword}{using }std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{keyword}{using }std::cout;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{keyword}{using }std::sort;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{keyword}{using }std::ofstream;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{keyword}{using }std::to\_string;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00015}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018     \textcolor{keywordtype}{string} answer, ats;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020         cout << \textcolor{stringliteral}{"{}ar norite kruti rezultatu faila ? \{0\} ar norite generuoti 5 duomenu failus ? \{1\} (Duomenys saugomi Listuose)"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021         cin >> ats;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022         \textcolor{keywordflow}{if} (ats != \textcolor{stringliteral}{"{}1"{}} \&\& ats != \textcolor{stringliteral}{"{}0"{}}) cout << \textcolor{stringliteral}{"{}ivesta reiksme netinkama, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023     \} \textcolor{keywordflow}{while} (ats != \textcolor{stringliteral}{"{}1"{}} \&\& ats != \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024     \textcolor{keywordflow}{if} (ats == \textcolor{stringliteral}{"{}0"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027             cout << \textcolor{stringliteral}{"{}ar norite ivesti visas reiksmes pats ? (y/s), s atveju programa skaitys visus duomenis is sugeneruotu failu"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028             cin >> answer;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029             \textcolor{keywordflow}{if} (answer != \textcolor{stringliteral}{"{}y"{}} \&\& answer != \textcolor{stringliteral}{"{}s"{}}) cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel "{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030         \} \textcolor{keywordflow}{while} (answer != \textcolor{stringliteral}{"{}y"{}} \&\& answer != \textcolor{stringliteral}{"{}s"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031         \textcolor{keywordflow}{if} (answer == \textcolor{stringliteral}{"{}y"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033             \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035                 cout << \textcolor{stringliteral}{"{}iveskite kiek mokiniu bus vedami duomenys (n>0)"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036                 cin >> n;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037                 \textcolor{keywordflow}{if} (!n) cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038                 cin.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039                 cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040                 \textcolor{keywordflow}{if} (n)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041                 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042                     \textcolor{keywordflow}{if} (n < 0)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043                     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044                         cout << \textcolor{stringliteral}{"{}ivesta netinkama reiksme, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045                         n = !n;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046                     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048             \} \textcolor{keywordflow}{while} (!n);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049             vector<Studentas> a;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++) a.push\_back(\mbox{\hyperlink{Studentas_8h_ad1434f7dc63c38cdddab03aa9857d65e}{input}}(i + 1));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051             sort(a.begin(), a.end(), \mbox{\hyperlink{Studentas_8h_ab61fdda5da1fd7d3128ca416c9dcd00b}{compare}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052             \mbox{\hyperlink{Studentas_8h_aa13052ed3d778dd30654b58c0051f343}{rasymas}}(a);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (answer == \textcolor{stringliteral}{"{}s"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056             \textcolor{keywordtype}{string} ax, strategy;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057             vector<Studentas> all;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058             vector<Studentas> poor;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059             vector<Studentas> cool;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060             \textcolor{keyword}{const} \textcolor{keywordtype}{string} DF[5] = \{ \textcolor{stringliteral}{"{}kursiokai1000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai100000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai1000000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000000.txt"{}} \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061             \textcolor{keyword}{const} \textcolor{keywordtype}{string} RF[5] = \{ \textcolor{stringliteral}{"{}kietekai1000.txt"{}}, \textcolor{stringliteral}{"{}kietekai10000.txt"{}}, \textcolor{stringliteral}{"{}kietekai100000.txt"{}}, \textcolor{stringliteral}{"{}kietekai1000000.txt"{}}, \textcolor{stringliteral}{"{}kietekai10000000.txt"{}} \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062             \textcolor{keyword}{const} \textcolor{keywordtype}{string} Rf[5] = \{ \textcolor{stringliteral}{"{}vargsiukai1000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai10000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai100000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai1000000.txt"{}}, \textcolor{stringliteral}{"{}vargsiukai10000000.txt"{}} \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064                 cout << \textcolor{stringliteral}{"{}Pasirinkite, kokia skaidymo strategija naudoti 1 ar 2 ?"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065                 cin >> strategy;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066                 \textcolor{keywordflow}{if} (strategy != \textcolor{stringliteral}{"{}1"{}} \&\& strategy != \textcolor{stringliteral}{"{}2"{}}) cout << \textcolor{stringliteral}{"{}ivesta netinkama strategija, prasome ivesti vel"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067             \} \textcolor{keywordflow}{while} (strategy != \textcolor{stringliteral}{"{}1"{}} \&\& strategy != \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070                 ifstream fd;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{Studentas_8h_a42c606586e8fe6e641f8bb5b604ddb75}{FileExists}}(DF[i])) fd.exceptions(ifstream::failbit | ifstream::badbit);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073                 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074                     cout << DF[i] << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075                     fd.open(DF[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076                     \textcolor{keywordtype}{string} filler;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077                     \textcolor{keywordtype}{int} pazymiai = 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078                     fd >> filler;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079                     fd >> filler;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081                         fd >> filler;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082                         \textcolor{keywordflow}{if} (filler[0] == \textcolor{charliteral}{'N'}) pazymiai++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083                     \} \textcolor{keywordflow}{while} (filler[0] == \textcolor{charliteral}{'N'});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084                     \textcolor{keywordflow}{while} (!fd.eof()) all.push\_back(\mbox{\hyperlink{Studentas_8h_abf3d6f72641752baeb2d2acbf1528b1f}{skaitymas}}(pazymiai, fd));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085                     all.pop\_back();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086                     fd.close();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087                     \textcolor{keyword}{auto} sort\_start = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088                     sort(all.begin(), all.end(), \mbox{\hyperlink{Studentas_8h_ad7936bd281ee056b5555402dbc54539f}{comparePagalGalutiniBala}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089                     \textcolor{keywordflow}{if} (strategy == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090                     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091                         \mbox{\hyperlink{Studentas_8h_aa73e70e8ebd29631f6f78f8277ba9161}{isskyrimas}}(poor, cool, all);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092                         \textcolor{keyword}{auto} sort\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093                         std::chrono::duration<double> sort\_diff = sort\_end -\/ sort\_start;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094                         std::cout << \textcolor{stringliteral}{"{}Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 1 strategija uztruko: "{}} << sort\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095                     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097                     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098                         \mbox{\hyperlink{Studentas_8h_a4e11009b633d873bc27a8f28e86be69a}{isskyrimas2}}(poor, all);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099                         \textcolor{keyword}{auto} sort\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100                         std::chrono::duration<double> sort\_diff = sort\_end -\/ sort\_start;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101                         std::cout << \textcolor{stringliteral}{"{}Duomenu isrykiavimas ir isskyrimas i du atskirus kieteku, ir vargsiuku vectorius pagal 2 strategija uztruko: "{}} << sort\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102                     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104                 \textcolor{keywordflow}{catch} (ifstream::failure e) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105                     cout << e.what() << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106                     exit(-\/1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108                 \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(poor, Rf[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109                 \textcolor{keywordflow}{if} (strategy == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110                 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111                     \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(cool, RF[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112                     cool.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114                 \textcolor{keywordflow}{else} \mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(all, RF[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115                 system(\textcolor{stringliteral}{"{}PAUSE"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116                 all.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117                 poor.clear();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ats == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124         \textcolor{keywordtype}{int} quantity;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125         \textcolor{keyword}{const} \textcolor{keywordtype}{string} RF[5] = \{ \textcolor{stringliteral}{"{}kursiokai1000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai100000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai1000000.txt"{}}, \textcolor{stringliteral}{"{}kursiokai10000000.txt"{}} \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126         srand(time(NULL));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129             \textcolor{keyword}{auto} create\_start = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130             \textcolor{keywordtype}{string} output = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131             ofstream fr(RF[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133                 quantity = (double)rand() / RAND\_MAX * 7;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134             \} \textcolor{keywordflow}{while} (quantity == 0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135             output = \textcolor{stringliteral}{"{}Vardas                   Pavarde             "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00136}00136             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j <= quantity; j++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00137}00137             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00138}00138                 \textcolor{keywordtype}{string} atribute = \textcolor{stringliteral}{"{}ND"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00139}00139                 atribute += to\_string(j);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00140}00140                 \textcolor{keywordtype}{int} length = atribute.length();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00141}00141                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 10 -\/ length; k++) atribute.insert(0, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00142}00142                 output += atribute;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00143}00143             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00144}00144             output += \textcolor{stringliteral}{"{}      Egz.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00145}00145             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 1 * pow(10, i); j++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00146}00146             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00147}00147                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < 1000; k++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00148}00148                 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00149}00149                     \mbox{\hyperlink{classStudentas}{Studentas}} dummy = \mbox{\hyperlink{Studentas_8h_a6744405ab25462c0b36f0cb2895b68ac}{generavimas}}(quantity);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00150}00150                     \mbox{\hyperlink{Studentas_8h_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}}(output, dummy, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00151}00151                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00152}00152                 fr << output;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00153}00153                 output = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00154}00154             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00155}00155             fr.close();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00156}00156             \textcolor{keyword}{auto} create\_end = std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00157}00157             std::chrono::duration<double> create\_diff = create\_end -\/ create\_start;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00158}00158             std::cout << \textcolor{stringliteral}{"{}sukurtas: "{}} << RF[i] << \textcolor{stringliteral}{"{}, kuris uztruko: "{}} << create\_diff.count() << \textcolor{stringliteral}{"{} s\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00159}00159         \}   }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00160}00160     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00161}00161     system(\textcolor{stringliteral}{"{}PAUSE"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00162}00162     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00163}00163 \}}
+
+\end{DoxyCode}
