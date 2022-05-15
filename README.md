@@ -1,4 +1,4 @@
-# **Release v1.2**
+# **Release v1.5**
 
 ## **Aprašymas**
 Čia yra programa, kuri skaičiuoja mokinių metinį įvertinimą ir surusiuoja mokinius į dvi atskiras grupes: kietekus ir vargsiukus, metinio formulė atrodo taip:
@@ -44,3 +44,4 @@ Testavimams buvo naudojama:
    -SSD: 1 Tb (500 Gb x2)
 
 
+--Update - ideta abstract base klase, is kurios kyla studento klase(naudojama duomenims saugoti)

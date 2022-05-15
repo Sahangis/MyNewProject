@@ -2,15 +2,23 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <ostream>
 
 using std::string;
 using std::vector;
 using std::ifstream;
+using std::ostream;
 
 double mediana(const vector<double> &pazymiai);
 double average(const vector<double> &pazymiai);
 
-class Studentas {
+class Zmogus {
+public:
+    virtual const string& vardas() const = 0;
+    virtual const string& pavarde() const = 0;
+};
+
+class Studentas : public Zmogus {
 
 private:
     string vardas_;
@@ -21,8 +29,8 @@ private:
 public:
     Studentas() : vardas_(), pavarde_(), egzaminas_(), nd_() { } 
     Studentas(const string &vardas, const string &pavarde, double egzaminas, const vector<double> &nd) : vardas_(vardas), pavarde_(pavarde), egzaminas_(egzaminas), nd_(nd) {}
-    const string &vardas() const { return vardas_; }    
-    const string &pavarde() const { return pavarde_; }  
+    virtual const string &vardas() const override { return vardas_; }    
+    virtual const string &pavarde() const override { return pavarde_; }  
 	const vector<double>& pazymiai() const { return nd_; }
     //1st. rule - Copy constructor
     Studentas(const Studentas& source);
@@ -30,6 +38,10 @@ public:
     Studentas& operator=(const Studentas& source);
     //3rd. rule - Destructor
     ~Studentas();
+    // Random for the future use
+    Studentas& operator+(const Studentas& source);
+    friend ostream& operator<<(ostream& os, const Studentas& source);
+    //
     double egzaminas() const { return egzaminas_; }  
     double galutinisBalas(double (*sudedamas) (const vector<double>&)) const;  
 };

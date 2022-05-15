@@ -18,7 +18,7 @@ int main()
 
 	string answer, ats;
 	do {
-		cout << "ar norite kruti rezultatu faila ? {0} ar norite generuoti 5 duomenu failus ? {1} (Duomenys saugomi Listuose)" << endl;
+		cout << "ar norite kruti rezultatu faila ? {0} ar norite generuoti 5 duomenu failus ? {1} (Duomenys saugomi Vektoriuose)" << endl;
 		cin >> ats;
 		if (ats != "1" and ats != "0") cout << "ivesta reiksme netinkama, prasome ivesti vel" << endl;
 	} while (ats != "1" and ats != "0");
@@ -51,6 +51,7 @@ int main()
 			for (int i = 0; i < n; i++) a.push_back(input(i + 1));
 			sort(a.begin(), a.end(), compare);
 			rasymas(a);
+			cout << endl << a[0];
 		}
 		else if (answer == "s")
 		{

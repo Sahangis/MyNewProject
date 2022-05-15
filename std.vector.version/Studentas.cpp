@@ -52,8 +52,26 @@ Studentas& Studentas::operator=(const Studentas& source)
 //3rd. rule - destructor
 Studentas::~Studentas()
 {
-	
+	nd_.clear();
 }
+
+Studentas& Studentas::operator+(const Studentas& source)
+{
+	vardas_ += source.vardas_;
+	pavarde_ += source.pavarde_;
+	egzaminas_ += source.egzaminas_;
+	for (int i = 0; i < source.nd_.size(); i++) nd_.push_back(source.nd_[i]);
+	return *this;
+}
+
+ostream& operator<<(ostream& os, const Studentas& source)
+{
+	os << source.vardas_ << " " << source.pavarde_ << " ";
+	for (int i = 0; i < source.nd_.size(); i++) os<<source.nd_[i]<<" ";
+	os << source.egzaminas_ << endl;
+	return os;
+}
+
 
 double mediana(const vector<double>&pazymiai)
 {
