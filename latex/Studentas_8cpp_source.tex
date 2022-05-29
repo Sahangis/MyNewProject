@@ -1,0 +1,227 @@
+\hypertarget{Studentas_8cpp_source}{}\doxysection{Studentas.\+cpp}
+\label{Studentas_8cpp_source}\index{source/Studentas.cpp@{source/Studentas.cpp}}
+\mbox{\hyperlink{Studentas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Studentas_8h}{Studentas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00009}00009 \textcolor{keyword}{using }std::setw;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00010}00010 \textcolor{keyword}{using }std::left;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00011}00011 \textcolor{keyword}{using }std::setprecision;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00012}00012 \textcolor{keyword}{using }std::fixed;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00013}00013 \textcolor{keyword}{using }std::cin;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00014}00014 \textcolor{keyword}{using }std::endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00015}00015 \textcolor{keyword}{using }std::cout;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00016}00016 \textcolor{keyword}{using }std::ofstream;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00017}00017 \textcolor{keyword}{using }std::to\_string;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00018}00018 \textcolor{keyword}{using }std::sort;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00019}00019 \textcolor{keyword}{using }std::stringstream;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00020}00020 \textcolor{keyword}{using }std::ifstream;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00022}\mbox{\hyperlink{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}{00022}} \textcolor{keyword}{const} \textcolor{keywordtype}{string} \mbox{\hyperlink{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}{vardai}}[16] = \{ \textcolor{stringliteral}{"{}Martynas"{}}, \textcolor{stringliteral}{"{}Jonas"{}}, \textcolor{stringliteral}{"{}Vilijamas"{}}, \textcolor{stringliteral}{"{}Kristijonas"{}}, \textcolor{stringliteral}{"{}Vincas"{}}, \textcolor{stringliteral}{"{}Alberas"{}}, \textcolor{stringliteral}{"{}Francas"{}} , \textcolor{stringliteral}{"{}Juozas"{}}, \textcolor{stringliteral}{"{}Jurgis"{}}, \textcolor{stringliteral}{"{}Antanas"{}}, \textcolor{stringliteral}{"{}Henrikas"{}}, \textcolor{stringliteral}{"{}Balys"{}}, \textcolor{stringliteral}{"{}Augustas"{}}, \textcolor{stringliteral}{"{}Justinas"{}}, \textcolor{stringliteral}{"{}Ernestas"{}}, \textcolor{stringliteral}{"{}Hansas"{}} \};}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00023}\mbox{\hyperlink{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}{00023}} \textcolor{keyword}{const} \textcolor{keywordtype}{string} \mbox{\hyperlink{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}{pavardes}}[16] = \{ \textcolor{stringliteral}{"{}Dauksa"{}}, \textcolor{stringliteral}{"{}Radvanas"{}}, \textcolor{stringliteral}{"{}Marcinkevicius"{}}, \textcolor{stringliteral}{"{}Kafka"{}}, \textcolor{stringliteral}{"{}Kamiu"{}}, \textcolor{stringliteral}{"{}Kudirka"{}}, \textcolor{stringliteral}{"{}Shekspyras"{}}, \textcolor{stringliteral}{"{}Donelaitis"{}}, \textcolor{stringliteral}{"{}Mickevicius"{}}, \textcolor{stringliteral}{"{}Biliunas"{}}, \textcolor{stringliteral}{"{}Vaizgantas"{}}, \textcolor{stringliteral}{"{}Radauskas"{}}, \textcolor{stringliteral}{"{}Krivickas"{}}, \textcolor{stringliteral}{"{}Savickis"{}}, \textcolor{stringliteral}{"{}Sruoga"{}}, \textcolor{stringliteral}{"{}Katiliskis"{}} \};}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00025}00025 \textcolor{comment}{//Ja modifikavus i klase, o taip pat atsizvelgiant i anksciau sukurtas funkcijas, kurios operavo su Studentas tipo objektais, preliminarus antrastes(header) failas Studentas.h / Studentas.hpp:}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00027}00027 \textcolor{comment}{// Reikia includinti visas priklausomybes: <iostream>, <string>, <vector>, "{}mediana.h"{}}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00028}\mbox{\hyperlink{Studentas_8h_a6cf9eb93d9bc47f42c2c6364d1cae767}{00028}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}{mediana}}(\textcolor{keyword}{const} vector<double>\&pazymiai)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00029}00029 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00030}00030     \textcolor{keywordflow}{if} (pazymiai.size() / 2 == 1) \textcolor{keywordflow}{return} pazymiai[pazymiai.size() / 2];}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00031}00031     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} (pazymiai[pazymiai.size() / 2] + pazymiai[pazymiai.size() / 2 -\/ 1]) / 2;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00032}00032 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00033}\mbox{\hyperlink{Studentas_8h_aad9e2f9a6a42409f396140ac7a59f59a}{00033}} \textcolor{keywordtype}{double} \mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}(\textcolor{keyword}{const} vector<double>\&pazymiai)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00034}00034 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00035}00035     \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00036}00036     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} pazymys : pazymiai)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00038}00038         sum += pazymys;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00040}00040     \textcolor{keywordflow}{return} sum / pazymiai.size();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00043}\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{00043}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{Studentas::galutinisBalas}}(\textcolor{keywordtype}{double} (*sudedamas) (\textcolor{keyword}{const} vector<double>\&)) \textcolor{keyword}{const}  \textcolor{comment}{// get'eriai}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00044}00044 \{ }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00045}00045     \textcolor{keywordflow}{return} sudedamas(nd\_) *0.4 + egzaminas\_ * 0.6;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00048}\mbox{\hyperlink{Studentas_8h_ab61fdda5da1fd7d3128ca416c9dcd00b}{00048}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{Studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}{compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&a, \textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&b)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00050}00050     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}() < b.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00051}00051 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00052}\mbox{\hyperlink{Studentas_8h_a3bb6ccb88204b8e5648eaedf0ac7bfa7}{00052}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{Studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}{comparePagalPavarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&a, \textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&b)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}() < b.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00056}\mbox{\hyperlink{Studentas_8h_ad7936bd281ee056b5555402dbc54539f}{00056}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{Studentas_8cpp_ad7936bd281ee056b5555402dbc54539f}{comparePagalGalutiniBala}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&a, \textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\&b)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00058}00058     \textcolor{keywordflow}{return} a.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) > b.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00059}00059 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00061}\mbox{\hyperlink{Studentas_8h_abf3d6f72641752baeb2d2acbf1528b1f}{00061}} \mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_abf3d6f72641752baeb2d2acbf1528b1f}{skaitymas}}(\textcolor{keywordtype}{int} n, ifstream\& fd)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00062}00062 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00063}00063     \textcolor{keywordtype}{int} sk, sum = 0;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00064}00064     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00065}00065     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00066}00066     fd >> vardas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00067}00067     \textcolor{keywordflow}{if} (fd.eof()) \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00068}00068     fd >> pavarde;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00070}00070     vector<double> pazymiai(n);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00071}00071     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00072}00072     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00073}00073         fd >> sk;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00074}00074         sum += sk;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00075}00075         pazymiai[i] = sk;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00077}00077     fd >> egzaminas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00078}00078     \textcolor{comment}{//temp.answer = sum * 1.0 / n * 0.4 + temp.egzaminas * 1.0 * 0.6;}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00079}00079     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00082}\mbox{\hyperlink{Studentas_8h_ad1434f7dc63c38cdddab03aa9857d65e}{00082}} \mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_ad1434f7dc63c38cdddab03aa9857d65e}{input}}(\textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00084}00084     \mbox{\hyperlink{classStudentas}{Studentas}} temp;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00085}00085     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00086}00086     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00087}00087         cout << \textcolor{stringliteral}{"{}iveskite "{}} << i << \textcolor{stringliteral}{"{} -\/ojo mokinio varda(ilgis ne daugiau 15 simboliu): "{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00088}00088         cin >> vardas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00089}00089         \textcolor{keywordflow}{if} (vardas.length() >= 16) cout << \textcolor{stringliteral}{"{}ivestas per ilgas vardas, prasome ivesti trumpesni"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00090}00090     \} \textcolor{keywordflow}{while} (vardas.length() >= 16);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00091}00091     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00092}00092         cout << \textcolor{stringliteral}{"{}iveskite "{}} << i << \textcolor{stringliteral}{"{} -\/ojo mokinio pavarde(ilgis ne daugiau 15 simboliu): "{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00093}00093         cin >> pavarde;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00094}00094         \textcolor{keywordflow}{if} (pavarde.length() >= 16) cout << \textcolor{stringliteral}{"{}ivesta per ilga pavarde, prasome ivesti trumpesne"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00095}00095     \} \textcolor{keywordflow}{while} (pavarde.length() >= 16);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00096}00096     \textcolor{keywordtype}{bool} inFail;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00097}00097     \textcolor{keywordtype}{int} sk;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00098}00098     vector<double> pazymiai;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00099}00099     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00100}00100     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00101}00101         \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00102}00102         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00103}00103             cout << \textcolor{stringliteral}{"{}iveskite "{}} << j + 1 << \textcolor{stringliteral}{"{} pazimi"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00104}00104             cin >> sk;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00105}00105             inFail = cin.fail();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00106}00106             cin.clear();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00107}00107             cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00108}00108             \textcolor{keywordflow}{if} (!inFail)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00109}00109             \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00110}00110                 \textcolor{keywordflow}{if} (sk > 10 || sk < 0) inFail = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00111}00111                 \textcolor{keywordflow}{else} pazymiai.push\_back(sk);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00112}00112             \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00113}00113             j++;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00114}00114         \} \textcolor{keywordflow}{while} (!inFail);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00115}00115         \textcolor{keywordflow}{if} (pazymiai.size() == 0) cout << \textcolor{stringliteral}{"{}Negalime skaiciuoti rezultatu su mokiniu kuris neturi pazymiu, prasome vesti vel"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00116}00116     \} \textcolor{keywordflow}{while} (pazymiai.size() == 0);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00118}00118     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00119}00119         cout << \textcolor{stringliteral}{"{}iveskite egzamino rezultata"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00120}00120         cin >> egzaminas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00121}00121         inFail = cin.fail();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00122}00122         cin.clear();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00123}00123         cin.ignore(INT\_MAX, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00124}00124         \textcolor{keywordflow}{if} (!inFail) \textcolor{keywordflow}{if} (egzaminas > 10 || egzaminas < 0) inFail = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00125}00125     \} \textcolor{keywordflow}{while} (inFail);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00126}00126     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00127}00127 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00129}\mbox{\hyperlink{Studentas_8h_a6744405ab25462c0b36f0cb2895b68ac}{00129}} \mbox{\hyperlink{classStudentas}{Studentas}} \mbox{\hyperlink{Studentas_8cpp_a6744405ab25462c0b36f0cb2895b68ac}{generavimas}}(\textcolor{keywordtype}{int} quantity)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00130}00130 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00131}00131     \textcolor{keywordtype}{string} vardas, pavarde;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00132}00132     vector<double> pazymiai;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00133}00133     \textcolor{keywordtype}{double} egzaminas;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00134}00134     \textcolor{keywordtype}{int} index = (double)rand() / RAND\_MAX * 15.9;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00135}00135     vardas = \mbox{\hyperlink{Studentas_8cpp_ac6f5cdcdaebbc1d49c96299355ce4aa6}{vardai}}[index];}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00136}00136     \textcolor{keywordtype}{int} index2 = (double)rand() / RAND\_MAX * 15.9;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00137}00137     pavarde = \mbox{\hyperlink{Studentas_8cpp_a0f887b79e62bd7e415143abbfb4620ac}{pavardes}}[index2];}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00138}00138     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00139}00139     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < quantity; i++)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00140}00140     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00141}00141         \textcolor{keywordtype}{int} value = (double)rand() / RAND\_MAX * 10.9;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00142}00142         pazymiai.push\_back(value);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00143}00143         sum += value;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00145}00145     \textcolor{keywordtype}{int} egz = (double)rand() / RAND\_MAX * 10.9;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00146}00146     egzaminas = egz;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00147}00147     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudentas}{Studentas}}(vardas, pavarde, egzaminas, pazymiai);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00148}00148 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00150}\mbox{\hyperlink{Studentas_8h_aa73e70e8ebd29631f6f78f8277ba9161}{00150}} \textcolor{keywordtype}{void} \mbox{\hyperlink{Studentas_8cpp_aa73e70e8ebd29631f6f78f8277ba9161}{isskyrimas}}(vector<Studentas>\& poor, vector<Studentas>\& cool, vector<Studentas>\& all)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00151}00151 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00152}00152     \textcolor{keyword}{auto} answer = std::find\_if(all.begin(), all.end(), [](\mbox{\hyperlink{classStudentas}{Studentas}} a) \{ return a.galutinisBalas(average) < 5; \});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00153}00153     poor.insert(poor.begin(), answer, all.end());}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00154}00154     all.erase(answer, all.end());}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00155}00155     cool.insert(cool.begin(), all.begin(), all.end());}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00156}00156 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00158}\mbox{\hyperlink{Studentas_8h_a4e11009b633d873bc27a8f28e86be69a}{00158}} \textcolor{keywordtype}{void} \mbox{\hyperlink{Studentas_8cpp_a4e11009b633d873bc27a8f28e86be69a}{isskyrimas2}}(vector<Studentas>\& poor, vector<Studentas>\& all)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00159}00159 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00160}00160     \textcolor{keyword}{auto} answer = std::find\_if(all.begin(), all.end(), [](\mbox{\hyperlink{classStudentas}{Studentas}} a) \{ return a.galutinisBalas(average) < 5; \});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00161}00161     poor.insert(poor.begin(), answer, all.end());}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00162}00162     all.erase(answer, all.end());}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00163}00163 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00165}\mbox{\hyperlink{Studentas_8h_a42c606586e8fe6e641f8bb5b604ddb75}{00165}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{Studentas_8cpp_a42c606586e8fe6e641f8bb5b604ddb75}{FileExists}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00166}00166 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00167}00167     ifstream file(filename);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00168}00168     \textcolor{keywordflow}{if} (file.is\_open())}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00169}00169     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00170}00170         file.close();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00171}00171         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00173}00173     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00174}00174     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00175}00175     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00176}00176         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00177}00177     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00178}00178 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00180}\mbox{\hyperlink{Studentas_8h_a5d359c59eff8a1c1f7583dd078d054a0}{00180}} \textcolor{keywordtype}{void} \mbox{\hyperlink{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}}(\textcolor{keywordtype}{string}\& output, \textcolor{keyword}{const} \mbox{\hyperlink{classStudentas}{Studentas}}\& a, \textcolor{keywordtype}{bool} kurimas)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00181}00181 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00182}00182     stringstream stream;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00183}00183     stream << left << setw(16) << a.\mbox{\hyperlink{classStudentas_a2d10ec79c56adf61b9e95dc867782374}{vardas}}() << left << setw(16) << a.\mbox{\hyperlink{classStudentas_acb79c7169b78950c845cf5034386c1ec}{pavarde}}();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00184}00184     \textcolor{keywordflow}{if} (kurimas)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00185}00185     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00186}00186         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < a.\mbox{\hyperlink{classStudentas_ad5fd968a90dab3dc1bcb6b693451ba81}{pazymiai}}().size(); i++)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00187}00187         \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00188}00188             stream << left << setw(10) << fixed << setprecision(0) << a.\mbox{\hyperlink{classStudentas_ad5fd968a90dab3dc1bcb6b693451ba81}{pazymiai}}()[i];}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00189}00189         \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00190}00190         stream << left << setw(10) << fixed << setprecision(0) << a.\mbox{\hyperlink{classStudentas_a64d09da390e433eb68d7ca43e414d570}{egzaminas}}() << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00191}00191     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00192}00192     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00193}00193     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00194}00194         stream << a.\mbox{\hyperlink{classStudentas_a4f5e8aaa5f3dd025924644394dd32e02}{galutinisBalas}}(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00195}00195     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00196}00196     output + stream.str();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00197}00197 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00199}\mbox{\hyperlink{Studentas_8h_aa13052ed3d778dd30654b58c0051f343}{00199}} \textcolor{keywordtype}{void} \mbox{\hyperlink{Studentas_8cpp_aa13052ed3d778dd30654b58c0051f343}{rasymas}}(\textcolor{keyword}{const} vector<Studentas>\& temp)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00200}00200 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00201}00201     cout << left << setw(16) << \textcolor{stringliteral}{"{}Vardas"{}} << left << setw(16) << \textcolor{stringliteral}{"{}Pavarde"{}} << left << setw(18) << \textcolor{stringliteral}{"{}Galutinis (Vid.)"{}} << left << setw(16) << \textcolor{stringliteral}{"{}Galutinis(Med.)"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00202}00202     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00203}00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < temp.size(); i++)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00204}00204     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00205}00205         cout << left << setw(16) << temp[i].vardas() << left << setw(16) << temp[i].pavarde() << left << setw(18) << fixed << setprecision(2) << temp[i].galutinisBalas(\mbox{\hyperlink{Studentas_8cpp_aad9e2f9a6a42409f396140ac7a59f59a}{average}}) << left << setw(18) << fixed << setprecision(2) << temp[i].galutinisBalas(\mbox{\hyperlink{Studentas_8cpp_a6cf9eb93d9bc47f42c2c6364d1cae767}{mediana}}) << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00206}00206     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00207}00207 \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00209}\mbox{\hyperlink{Studentas_8h_a444c8dd2b6a58de17beedcc0b5dbb2a2}{00209}} \textcolor{keywordtype}{void} \mbox{\hyperlink{Studentas_8cpp_a444c8dd2b6a58de17beedcc0b5dbb2a2}{rasymas\_s}}(\textcolor{keyword}{const} vector<Studentas>\& temp, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& RF)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00210}00210 \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00211}00211     ofstream fr(RF);}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00212}00212     fr << left << setw(20) << \textcolor{stringliteral}{"{}Vardas"{}} << left << setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}} << \textcolor{stringliteral}{"{}Galutinis (Vid.)"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00213}00213     fr << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00214}00214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < temp.size(); i++)}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00215}00215     \{}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00216}00216         \textcolor{keywordtype}{string} eile = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00217}00217         \mbox{\hyperlink{Studentas_8cpp_a5d359c59eff8a1c1f7583dd078d054a0}{outputas}}(eile, temp[i], \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00218}00218         fr << eile;}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00219}00219     \}}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00220}00220     fr.close();}
+\DoxyCodeLine{\Hypertarget{Studentas_8cpp_source_l00221}00221 \}}
+
+\end{DoxyCode}
