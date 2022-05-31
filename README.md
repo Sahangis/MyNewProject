@@ -60,9 +60,17 @@ Duomenu apdorojimas su mano vektoriais 0.5714 s
 išvada: std vektoriai greitesni release mode.
 
 
-## **3 ir 4 punktai**
+## **3 punktas**
 
-kompiuteris pradėjo kritinius memory errorus mėtyti. Duomenų failai tapo pernelyg dideli. Kadangi problemos nepavyko sutvarkyti ir errorai teigė jog kompiuteriui kilo rizika, nors kodas pagal idėją yra geras(be errorų ar warningų), nesugebėjau įgyvendinti likusių 3 ir 4 punktų.
+Naudojant mano Vektorių atminties konteineriu perskirstymas įvyko: 39 kartus
+
+Naudojant std::vector atminties konteineriu perskirstymas įvyko: 41 kartą
+
+išvada: mažiau perskirstymų prireikė: mano vektoriam
+
+## **4 punktas**
+
+išvada: panaudojus mano sukurtą vektorių programa veikė taip pat kaip su std::vektoriumi
  
 ---------------------------------------------------------------------------------------------------------------------------
 Testavimams buvo naudojama:
